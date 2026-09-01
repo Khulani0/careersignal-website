@@ -1,16 +1,16 @@
 /* ---------- Tokens ---------- */
 :root {
-  --ink: #1a1a1a;
-  --ink-soft: #56534c;
-  --paper: #fafafa;
+  --ink: #14181d;
+  --ink-soft: #586473;
+  --paper: #f2f7f6;
   --paper-raised: #ffffff;
-  --charcoal: #24221f;
-  --charcoal-deep: #141311;
-  --rust: #b05c1b;        /* primary brand color — text/buttons on white, ~4.8:1 contrast */
-  --rust-deep: #8a4614;   /* hover/active state for rust */
-  --rust-light: #d9772e;  /* brighter tint — decorative use only, not for small text */
-  --rust-wash: rgba(176, 92, 27, 0.08);
-  --line: rgba(36, 34, 31, 0.12);
+  --navy: #0a1628;         /* dark panels/boxes, sampled from STRAATSAFE deck */
+  --teal: #007a6e;         /* stat numbers, eyebrow labels, sampled from deck */
+  --gold: #c98a00;         /* primary accent, sampled from deck. On dark navy only, ~2.9:1 on light bg */
+  --gold-deep: #9e6c00;    /* hue-locked darken of --gold for AA on light bg, ~4.6:1 */
+  --gold-deep-hover: #7f5700;
+  --gold-wash: rgba(201, 138, 0, 0.08);
+  --line: rgba(10, 22, 40, 0.12);
 
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -47,7 +47,7 @@ a { color: inherit; }
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--charcoal-deep);
+  background: var(--ink);
   color: var(--paper);
   padding: 12px 18px;
   border-radius: 0 0 8px 0;
@@ -58,7 +58,7 @@ a { color: inherit; }
   left: 0;
 }
 :focus-visible {
-  outline: 3px solid var(--rust-light);
+  outline: 3px solid var(--gold-deep);
   outline-offset: 2px;
 }
 
@@ -76,7 +76,7 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(250, 250, 250, 0.92);
+  background: rgba(242, 247, 246, 0.92);
   backdrop-filter: saturate(140%) blur(6px);
   border-bottom: 1px solid var(--line);
 }
@@ -91,7 +91,7 @@ a { color: inherit; }
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.25rem;
-  color: var(--charcoal-deep);
+  color: var(--ink);
   text-decoration: none;
   letter-spacing: -0.01em;
 }
@@ -109,10 +109,10 @@ a { color: inherit; }
   white-space: nowrap;
 }
 .btn-whatsapp {
-  background: var(--rust);
+  background: var(--gold-deep);
   color: #ffffff;
 }
-.btn-whatsapp:hover { background: var(--rust-deep); }
+.btn-whatsapp:hover { background: var(--gold-deep-hover); }
 .btn-whatsapp:active { transform: translateY(1px); }
 .btn-small {
   padding: 8px 16px;
@@ -121,7 +121,7 @@ a { color: inherit; }
 .btn-large {
   padding: 15px 26px;
   font-size: 1.05rem;
-  box-shadow: 0 10px 24px -10px rgba(176, 92, 27, 0.5);
+  box-shadow: 0 10px 24px -10px rgba(158, 108, 0, 0.5);
 }
 .wa-icon { display: inline-flex; }
 
@@ -129,7 +129,7 @@ a { color: inherit; }
 .hero {
   padding: 64px 0 56px;
   background:
-    radial-gradient(700px 380px at 85% -10%, var(--rust-wash), transparent 60%),
+    radial-gradient(700px 380px at 85% -10%, var(--gold-wash), transparent 60%),
     var(--paper);
   border-bottom: 1px solid var(--line);
 }
@@ -138,7 +138,7 @@ a { color: inherit; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.78rem;
-  color: var(--rust);
+  color: var(--teal);
   margin-bottom: 14px;
 }
 .hero h1 {
@@ -146,7 +146,7 @@ a { color: inherit; }
   font-weight: 600;
   font-size: clamp(2rem, 6.5vw, 3.1rem);
   line-height: 1.12;
-  color: var(--charcoal-deep);
+  color: var(--ink);
   letter-spacing: -0.01em;
   max-width: 15ch;
 }
@@ -182,7 +182,7 @@ section h2 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(1.6rem, 4vw, 2.1rem);
-  color: var(--charcoal-deep);
+  color: var(--ink);
   letter-spacing: -0.01em;
 }
 .section-lead {
@@ -205,14 +205,14 @@ section h2 {
   background: var(--paper-raised);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 50px -24px rgba(20, 19, 17, 0.28);
+  box-shadow: 0 20px 50px -24px rgba(10, 22, 40, 0.28);
   border: 1px solid var(--line);
 }
 .chat-bar {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--charcoal);
+  background: var(--navy);
   color: var(--paper);
   padding: 12px 16px;
 }
@@ -220,7 +220,7 @@ section h2 {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--rust);
+  background: var(--gold-deep);
   color: #fff;
   display: flex;
   align-items: center;
@@ -234,8 +234,8 @@ section h2 {
 .chat-body {
   padding: 18px 14px 22px;
   background:
-    repeating-linear-gradient(135deg, rgba(36,34,31,0.03) 0 2px, transparent 2px 26px),
-    #f3f1ee;
+    repeating-linear-gradient(135deg, rgba(10,22,40,0.03) 0 2px, transparent 2px 26px),
+    #eff2f1;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -255,7 +255,7 @@ section h2 {
 }
 .bubble[hidden] { display: none; }
 /* Until JS confirms it can drive the animation, every bubble is shown as a
-   static transcript — see script.js for the .js class swap. */
+   static transcript. See script.js for the .js class swap. */
 .js .bubble {
   opacity: 0;
   transform: translateY(8px);
@@ -281,7 +281,7 @@ section h2 {
 }
 .bubble-out {
   align-self: flex-end;
-  background: #f6e7da;
+  background: #f8f1e0;
   border-top-right-radius: 2px;
 }
 
@@ -298,8 +298,8 @@ section h2 {
   height: 18px;
   background: repeating-linear-gradient(
     90deg,
-    var(--rust),
-    var(--rust) 2px,
+    var(--gold-deep),
+    var(--gold-deep) 2px,
     transparent 2px 5px
   );
   opacity: 0.8;
@@ -345,8 +345,8 @@ section h2 {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--charcoal);
-  background: rgba(36, 34, 31, 0.08);
+  color: var(--navy);
+  background: rgba(10, 22, 40, 0.08);
   padding: 5px 12px;
   border-radius: 999px;
   display: flex;
@@ -358,7 +358,7 @@ section h2 {
 .js .step-label { opacity: 0; }
 .js .step-label.msg-visible { opacity: 1; }
 .step-label span {
-  background: var(--charcoal);
+  background: var(--navy);
   color: var(--paper);
   width: 16px;
   height: 16px;
@@ -370,33 +370,33 @@ section h2 {
 }
 
 /* ---------- Why different ---------- */
-.why { background: var(--charcoal); color: var(--paper); }
+.why { background: var(--navy); color: var(--paper); }
 .why h2 { color: var(--paper); }
-.why .section-lead { color: rgba(250, 250, 250, 0.72); }
+.why .section-lead { color: rgba(242, 247, 246, 0.72); }
 
 .fact-sheet {
   margin-top: 36px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
-  background: rgba(250, 250, 250, 0.16);
-  border: 1px solid rgba(250, 250, 250, 0.16);
+  background: rgba(242, 247, 246, 0.16);
+  border: 1px solid rgba(242, 247, 246, 0.16);
   border-radius: var(--radius);
   overflow: hidden;
 }
 .fact {
-  background: var(--charcoal);
+  background: var(--navy);
   padding: 26px 24px;
 }
 .fact h3 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.15rem;
-  color: var(--rust-light);
+  color: var(--gold);
   margin-bottom: 8px;
 }
 .fact p {
-  color: rgba(250, 250, 250, 0.84);
+  color: rgba(242, 247, 246, 0.84);
   font-size: 0.98rem;
 }
 
@@ -419,7 +419,7 @@ section h2 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.2rem;
-  color: var(--charcoal-deep);
+  color: var(--ink);
 }
 .price-desc {
   color: var(--ink-soft);
@@ -430,7 +430,7 @@ section h2 {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--rust);
+  color: var(--teal);
   flex-shrink: 0;
 }
 .price-note {
@@ -442,7 +442,7 @@ section h2 {
 /* ---------- Closing CTA ---------- */
 .closing {
   background:
-    radial-gradient(600px 320px at 15% 110%, var(--rust-wash), transparent 60%),
+    radial-gradient(600px 320px at 15% 110%, var(--gold-wash), transparent 60%),
     var(--paper);
   text-align: center;
   border-top: 1px solid var(--line);
@@ -454,7 +454,7 @@ section h2 {
   gap: 14px;
   max-width: 46ch;
 }
-.closing h2 { color: var(--charcoal-deep); }
+.closing h2 { color: var(--ink); }
 .closing p { color: var(--ink-soft); font-size: 1.05rem; }
 .closing .btn { margin-top: 10px; }
 
@@ -482,7 +482,7 @@ section h2 {
   text-decoration: none;
 }
 .footer-links a:hover {
-  color: var(--rust);
+  color: var(--gold-deep);
   text-decoration: underline;
 }
 
@@ -491,12 +491,12 @@ section h2 {
   padding: 56px 0 32px;
   border-bottom: 1px solid var(--line);
 }
-.page-hero .eyebrow { color: var(--rust); }
+.page-hero .eyebrow { color: var(--teal); }
 .page-hero h1 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(1.9rem, 5vw, 2.6rem);
-  color: var(--charcoal-deep);
+  color: var(--ink);
   letter-spacing: -0.01em;
   max-width: 20ch;
 }
@@ -514,8 +514,8 @@ section h2 {
 
 .pending-notice {
   margin-top: 24px;
-  border: 1px dashed rgba(176, 92, 27, 0.45);
-  background: var(--rust-wash);
+  border: 1px dashed rgba(158, 108, 0, 0.45);
+  background: var(--gold-wash);
   border-radius: var(--radius);
   padding: 20px 22px;
   display: flex;
@@ -526,21 +526,21 @@ section h2 {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--rust);
+  color: var(--gold-deep);
   flex-shrink: 0;
 }
 .pending-notice p {
-  color: var(--charcoal);
+  color: var(--ink);
   font-size: 0.98rem;
   margin: 0;
 }
-.pending-notice strong { color: var(--charcoal-deep); }
+.pending-notice strong { color: var(--ink); }
 
 .back-home {
   display: inline-block;
   margin-top: 32px;
   font-weight: 600;
-  color: var(--rust);
+  color: var(--gold-deep);
   text-decoration: none;
 }
 .back-home:hover { text-decoration: underline; }

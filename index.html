@@ -22,6 +22,11 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a href="#top" class="logo">CareerSignal</a>
+    <nav class="site-nav" aria-label="Section">
+      <a href="#how-it-works">How it works</a>
+      <a href="#templates">Templates</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
     <!-- WHATSAPP LINK PLACEHOLDER: replace wa.me/PLACEHOLDER with the real WhatsApp number link once registration is complete -->
     <a class="btn btn-whatsapp btn-small" href="https://wa.me/PLACEHOLDER" target="_blank" rel="noopener">
       <span class="wa-icon" aria-hidden="true">
@@ -55,10 +60,10 @@
       <div class="hero-glyph" aria-hidden="true">
         <svg viewBox="0 0 280 260" width="280" height="260">
           <path d="M140 10c71 0 128 51 128 114s-57 114-128 114c-16 0-31-2-45-7l-52 20 17-48C48 179 12 155 12 124 12 61 69 10 140 10z"
-                fill="none" stroke="#0F4C5C" stroke-width="2.5" opacity="0.16"/>
-          <circle cx="96" cy="120" r="7" fill="#007A6E" opacity="0.55"/>
-          <circle cx="140" cy="120" r="7" fill="#0F4C5C" opacity="0.35"/>
-          <circle cx="184" cy="120" r="7" fill="#C98A00" opacity="0.6"/>
+                fill="none" stroke="#1B3A5C" stroke-width="2.5" opacity="0.16"/>
+          <circle cx="96" cy="120" r="7" fill="#976616" opacity="0.55"/>
+          <circle cx="140" cy="120" r="7" fill="#1B3A5C" opacity="0.35"/>
+          <circle cx="184" cy="120" r="7" fill="#F5A623" opacity="0.7"/>
         </svg>
       </div>
     </div>
@@ -69,6 +74,55 @@
     <div class="wrap">
       <h2 id="how-heading">How it works</h2>
       <p class="section-lead">It's a conversation. Here's what it actually looks like.</p>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-icon">
+            <span class="step-num">1</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+            </svg>
+          </span>
+          <h3>Tap to start</h3>
+          <p>No app, no registration.</p>
+        </div>
+        <div class="step">
+          <span class="step-icon">
+            <span class="step-num">2</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 5h16v11H8l-4 4V5z"/>
+              <circle cx="9" cy="10.5" r="0.8" fill="currentColor" stroke="none"/>
+              <circle cx="12" cy="10.5" r="0.8" fill="currentColor" stroke="none"/>
+              <circle cx="15" cy="10.5" r="0.8" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <h3>Tell your story</h3>
+          <p>CV, text, or voice note.</p>
+        </div>
+        <div class="step">
+          <span class="step-icon">
+            <span class="step-num">3</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </span>
+          <h3>Preview first</h3>
+          <p>See it before you pay.</p>
+        </div>
+        <div class="step">
+          <span class="step-icon">
+            <span class="step-num">4</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2h9l5 5v15H6z"/>
+              <path d="M9 13l2 2 4-4"/>
+            </svg>
+          </span>
+          <h3>Get your CV</h3>
+          <p>Ready to send.</p>
+        </div>
+      </div>
 
       <div class="chat-transcript" role="img" aria-label="A WhatsApp conversation showing four steps: tap to start, tell your story by uploading a CV, typing, or sending a voice note, seeing a preview before paying, and receiving the finished CV.">
         <div class="chat-window">
@@ -127,6 +181,57 @@
     </div>
   </section>
 
+  <!-- TEMPLATES -->
+  <section class="templates" id="templates" aria-labelledby="templates-heading">
+    <div class="wrap">
+      <h2 id="templates-heading">Real templates</h2>
+      <p class="section-lead">These are the actual designs, not mockups. What you pick is what you get.</p>
+
+      <div class="template-groups">
+        <div class="template-group">
+          <div class="template-group-head">
+            <h3>Basic tier</h3>
+            <span class="template-count">3 templates</span>
+          </div>
+          <div class="template-card">
+            <picture>
+              <source srcset="/assets/templates/basic.webp" type="image/webp">
+              <img src="/assets/templates/basic.png" alt="The 3 templates available on the Basic tier: Classic, Two-Column, and Bold Header, each shown with sample CV content." loading="lazy" width="1400" height="674">
+            </picture>
+          </div>
+        </div>
+
+        <div class="template-group">
+          <div class="template-group-head">
+            <h3>Mid tier</h3>
+            <span class="template-count">5 templates</span>
+          </div>
+          <div class="template-card">
+            <picture>
+              <source srcset="/assets/templates/mid.webp" type="image/webp">
+              <img src="/assets/templates/mid.png" alt="The 5 templates available on the Mid tier: Classic, Two-Column, Bold Header, Minimalist, and Photo, each shown with sample CV content." loading="lazy" width="1400" height="1304">
+            </picture>
+          </div>
+        </div>
+
+        <div class="template-group">
+          <div class="template-group-head">
+            <h3>Advanced tier</h3>
+            <span class="template-count">10 templates</span>
+          </div>
+          <div class="template-card">
+            <picture>
+              <source srcset="/assets/templates/advanced.webp" type="image/webp">
+              <img src="/assets/templates/advanced.png" alt="The 10 templates available on the Advanced tier, including all Mid-tier designs plus Bordered, Banded, Contact Bar, Compact, and Centered, each shown with sample CV content." loading="lazy" width="1400" height="2564">
+            </picture>
+          </div>
+        </div>
+      </div>
+
+      <p class="templates-note">Sample content shown ("Jane Applicant") is a placeholder, not a real customer's CV. Every template is black-and-white by default for the cleanest ATS parsing, with one optional accent-colour option from Mid tier up.</p>
+    </div>
+  </section>
+
   <!-- WHY DIFFERENT -->
   <section class="why" id="why-different" aria-labelledby="why-heading">
     <div class="wrap">
@@ -160,29 +265,46 @@
       <h2 id="pricing-heading">Honest pricing</h2>
       <p class="section-lead">Three tiers. What you see is what you pay. No surprise add-ons at checkout.</p>
 
-      <ul class="price-list">
-        <li class="price-row">
-          <div class="price-name">
+      <div class="price-cards">
+        <div class="price-card">
+          <div class="price-card-head">
             <span class="price-tier">Basic</span>
-            <span class="price-desc">One page. Everything you need to apply.</span>
+            <span class="price-amount">R30</span>
           </div>
-          <span class="price-amount">R30</span>
-        </li>
-        <li class="price-row">
-          <div class="price-name">
+          <p class="price-desc">For a first, solid application.</p>
+          <ul class="price-features">
+            <li>One-page CV</li>
+            <li>Choice of 3 templates</li>
+            <li>One AI revision round</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-card-head">
             <span class="price-tier">Mid</span>
-            <span class="price-desc">Two pages. More room for your full history.</span>
+            <span class="price-amount">R50</span>
           </div>
-          <span class="price-amount">R50</span>
-        </li>
-        <li class="price-row">
-          <div class="price-name">
+          <p class="price-desc">More room for your full work history.</p>
+          <ul class="price-features">
+            <li>Two-page CV</li>
+            <li>Choice of 5 templates</li>
+            <li>Two AI revision rounds</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-card-head">
             <span class="price-tier">Advanced</span>
-            <span class="price-desc">Up to three pages, a cover letter, a version tailored to the job, and a human review.</span>
+            <span class="price-amount">R90</span>
           </div>
-          <span class="price-amount">R90</span>
-        </li>
-      </ul>
+          <p class="price-desc">The complete package, tailored to the job.</p>
+          <ul class="price-features">
+            <li>Up to three-page CV</li>
+            <li>Choice of 10 templates</li>
+            <li>Job-tailored keyword pass</li>
+            <li>Cover letter included</li>
+            <li>Unlimited AI revisions, plus one human review</li>
+          </ul>
+        </div>
+      </div>
       <p class="price-note">You always see a preview before you pay. If it's not right, you don't pay.</p>
     </div>
   </section>
@@ -205,13 +327,35 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>CareerSignal &middot; Made in South Africa</span>
-    <nav class="footer-links" aria-label="Legal">
-      <a href="/about">About</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-    </nav>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">CareerSignal</a>
+        <p>Real, honest CVs built over WhatsApp. Made for South Africa.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#templates">Templates</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <!-- WHATSAPP LINK PLACEHOLDER: replace wa.me/PLACEHOLDER with the real WhatsApp number link once registration is complete -->
+          <li><a href="https://wa.me/PLACEHOLDER" target="_blank" rel="noopener">Contact us on WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>STRAATTECH PTY LTD, South Africa</span>
+      <span>CareerSignal &middot; Made in South Africa</span>
+    </div>
   </div>
 </footer>
 

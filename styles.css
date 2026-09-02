@@ -1,16 +1,16 @@
 /* ---------- Tokens ---------- */
 :root {
-  --ink: #14181d;
-  --ink-soft: #586473;
-  --paper: #f2f7f6;
+  --ink: #142a33;
+  --ink-soft: #345866;
+  --paper: #edf6fa;
   --paper-raised: #ffffff;
-  --navy: #0a1628;         /* dark panels/boxes, sampled from STRAATSAFE deck */
+  --panel-dark: #0f4c5c;   /* dark panels/boxes, sampled from STRAATSAFE deck. Not navy: excluded per brief */
   --teal: #007a6e;         /* stat numbers, eyebrow labels, sampled from deck */
-  --gold: #c98a00;         /* primary accent, sampled from deck. On dark navy only, ~2.9:1 on light bg */
+  --gold: #c98a00;         /* primary accent, sampled from deck. ~2.7-3.2:1 on light bg/panel: decorative/large-text only */
   --gold-deep: #9e6c00;    /* hue-locked darken of --gold for AA on light bg, ~4.6:1 */
   --gold-deep-hover: #7f5700;
   --gold-wash: rgba(201, 138, 0, 0.08);
-  --line: rgba(10, 22, 40, 0.12);
+  --line: rgba(20, 42, 51, 0.12);
 
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -76,7 +76,7 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(242, 247, 246, 0.92);
+  background: rgba(237, 246, 250, 0.92);
   backdrop-filter: saturate(140%) blur(6px);
   border-bottom: 1px solid var(--line);
 }
@@ -205,14 +205,14 @@ section h2 {
   background: var(--paper-raised);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 50px -24px rgba(10, 22, 40, 0.28);
+  box-shadow: 0 20px 50px -24px rgba(15, 76, 92, 0.28);
   border: 1px solid var(--line);
 }
 .chat-bar {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--navy);
+  background: var(--panel-dark);
   color: var(--paper);
   padding: 12px 16px;
 }
@@ -234,8 +234,8 @@ section h2 {
 .chat-body {
   padding: 18px 14px 22px;
   background:
-    repeating-linear-gradient(135deg, rgba(10,22,40,0.03) 0 2px, transparent 2px 26px),
-    #eff2f1;
+    repeating-linear-gradient(135deg, rgba(15,76,92,0.03) 0 2px, transparent 2px 26px),
+    #e9f1f0;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -345,8 +345,8 @@ section h2 {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--navy);
-  background: rgba(10, 22, 40, 0.08);
+  color: var(--panel-dark);
+  background: rgba(15, 76, 92, 0.08);
   padding: 5px 12px;
   border-radius: 999px;
   display: flex;
@@ -358,7 +358,7 @@ section h2 {
 .js .step-label { opacity: 0; }
 .js .step-label.msg-visible { opacity: 1; }
 .step-label span {
-  background: var(--navy);
+  background: var(--panel-dark);
   color: var(--paper);
   width: 16px;
   height: 16px;
@@ -370,33 +370,33 @@ section h2 {
 }
 
 /* ---------- Why different ---------- */
-.why { background: var(--navy); color: var(--paper); }
+.why { background: var(--panel-dark); color: var(--paper); }
 .why h2 { color: var(--paper); }
-.why .section-lead { color: rgba(242, 247, 246, 0.72); }
+.why .section-lead { color: rgba(237, 246, 250, 0.72); }
 
 .fact-sheet {
   margin-top: 36px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
-  background: rgba(242, 247, 246, 0.16);
-  border: 1px solid rgba(242, 247, 246, 0.16);
+  background: rgba(237, 246, 250, 0.16);
+  border: 1px solid rgba(237, 246, 250, 0.16);
   border-radius: var(--radius);
   overflow: hidden;
 }
 .fact {
-  background: var(--navy);
+  background: var(--panel-dark);
   padding: 26px 24px;
 }
 .fact h3 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.15rem;
-  color: var(--gold);
+  color: var(--paper);
   margin-bottom: 8px;
 }
 .fact p {
-  color: rgba(242, 247, 246, 0.84);
+  color: rgba(237, 246, 250, 0.84);
   font-size: 0.98rem;
 }
 

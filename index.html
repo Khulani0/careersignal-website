@@ -56,6 +56,10 @@
           </a>
           <p class="hero-note">From R30. See your CV first. Pay only if you want it.</p>
         </div>
+        <div class="stat-strip">
+          <span class="stat-number">1,000+</span>
+          <span class="stat-label">CVs written for South Africans over the past 3 years</span>
+        </div>
       </div>
       <div class="hero-glyph" aria-hidden="true">
         <svg viewBox="0 0 280 260" width="280" height="260">
@@ -124,8 +128,9 @@
         </div>
       </div>
 
-      <div class="chat-transcript" role="img" aria-label="A WhatsApp conversation showing four steps: tap to start, tell your story by uploading a CV, typing, or sending a voice note, seeing a preview before paying, and receiving the finished CV.">
-        <div class="chat-window">
+      <div class="chat-transcript">
+       <div class="chat-transcript-inner">
+        <div class="chat-window" role="img" aria-label="A WhatsApp conversation showing four steps: tap to start, tell your story by uploading a CV, typing, or sending a voice note, seeing a preview before paying, and receiving the finished CV.">
           <div class="chat-bar">
             <div class="chat-bar-avatar">CS</div>
             <div class="chat-bar-name">CareerSignal</div>
@@ -177,6 +182,17 @@
 
           </div>
         </div>
+        <div class="chat-controls">
+          <button type="button" id="chat-prev" class="btn-ghost">&larr; Back</button>
+          <div class="step-dots" role="group" aria-label="Jump to a step">
+            <button type="button" class="step-dot" data-step="1" aria-current="false" aria-label="Step 1: Tap to start"></button>
+            <button type="button" class="step-dot" data-step="2" aria-current="false" aria-label="Step 2: Tell your story"></button>
+            <button type="button" class="step-dot" data-step="3" aria-current="false" aria-label="Step 3: Preview first"></button>
+            <button type="button" class="step-dot" data-step="4" aria-current="false" aria-label="Step 4: Get your CV"></button>
+          </div>
+          <button type="button" id="chat-next" class="btn-ghost">Next &rarr;</button>
+        </div>
+       </div>
       </div>
     </div>
   </section>
@@ -187,48 +203,151 @@
       <h2 id="templates-heading">Real templates</h2>
       <p class="section-lead">These are the actual designs, not mockups. What you pick is what you get.</p>
 
-      <div class="template-groups">
-        <div class="template-group">
-          <div class="template-group-head">
-            <h3>Basic tier</h3>
-            <span class="template-count">3 templates</span>
-          </div>
-          <div class="template-card">
-            <picture>
-              <source srcset="/assets/templates/basic.webp" type="image/webp">
-              <img src="/assets/templates/basic.png" alt="The 3 templates available on the Basic tier: Classic, Two-Column, and Bold Header, each shown with sample CV content." loading="lazy" width="1400" height="674">
-            </picture>
+      <div class="template-filters" role="group" aria-label="Filter templates">
+        <button type="button" class="filter-btn" data-filter-tier="all" aria-pressed="true">All tiers</button>
+        <button type="button" class="filter-btn" data-filter-tier="basic" aria-pressed="false">Basic <span aria-hidden="true">&middot;</span> 6</button>
+        <button type="button" class="filter-btn" data-filter-tier="mid" aria-pressed="false">Mid <span aria-hidden="true">&middot;</span> 10</button>
+        <button type="button" class="filter-btn" data-filter-tier="advanced" aria-pressed="false">Advanced <span aria-hidden="true">&middot;</span> 10</button>
+        <span class="filter-divider" aria-hidden="true"></span>
+        <button type="button" class="filter-btn filter-btn-photo" data-filter-photo aria-pressed="false">Photo option only</button>
+      </div>
+
+      <div class="template-grid" id="template-grid">
+        <div class="template-tile" data-tiers="basic mid advanced" data-photo="true">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-photo.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-photo.png" alt="Photo template: single column layout with an optional photo slot, sample CV content shown." loading="lazy" width="460" height="660">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name"><span class="photo-dot" aria-hidden="true"></span>Photo</div>
+            <p class="template-tile-desc">Single column with an optional photo slot.</p>
           </div>
         </div>
+        <div class="template-tile" data-tiers="basic mid advanced" data-photo="true">
+          <picture>
 
-        <div class="template-group">
-          <div class="template-group-head">
-            <h3>Mid tier</h3>
-            <span class="template-count">5 templates</span>
-          </div>
-          <div class="template-card">
-            <picture>
-              <source srcset="/assets/templates/mid.webp" type="image/webp">
-              <img src="/assets/templates/mid.png" alt="The 5 templates available on the Mid tier: Classic, Two-Column, Bold Header, Minimalist, and Photo, each shown with sample CV content." loading="lazy" width="1400" height="1304">
-            </picture>
+            <source srcset="/assets/templates/tmpl-photo-centered.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-photo-centered.png" alt="Photo Centered template: centered header with a photo, sample CV content shown." loading="lazy" width="460" height="660">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name"><span class="photo-dot" aria-hidden="true"></span>Photo Centered</div>
+            <p class="template-tile-desc">Centered header with a photo.</p>
           </div>
         </div>
+        <div class="template-tile" data-tiers="basic mid advanced" data-photo="false">
+          <picture>
 
-        <div class="template-group">
-          <div class="template-group-head">
-            <h3>Advanced tier</h3>
-            <span class="template-count">10 templates</span>
+            <source srcset="/assets/templates/tmpl-classic.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-classic.png" alt="Classic template: single column, traditional layout, sample CV content shown." loading="lazy" width="460" height="660">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name">Classic</div>
+            <p class="template-tile-desc">Single column, traditional layout.</p>
           </div>
-          <div class="template-card">
-            <picture>
-              <source srcset="/assets/templates/advanced.webp" type="image/webp">
-              <img src="/assets/templates/advanced.png" alt="The 10 templates available on the Advanced tier, including all Mid-tier designs plus Bordered, Banded, Contact Bar, Compact, and Centered, each shown with sample CV content." loading="lazy" width="1400" height="2564">
-            </picture>
+        </div>
+        <div class="template-tile" data-tiers="basic mid advanced" data-photo="false">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-two-column.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-two-column.png" alt="Two-Column template: two columns with a sidebar for contact and skills, sample CV content shown." loading="lazy" width="460" height="660">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name">Two-Column</div>
+            <p class="template-tile-desc">Two columns, sidebar for contact and skills.</p>
+          </div>
+        </div>
+        <div class="template-tile" data-tiers="basic mid advanced" data-photo="false">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-bold-header.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-bold-header.png" alt="Bold Header template: bold colour block across the header, sample CV content shown." loading="lazy" width="460" height="660">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name">Bold Header</div>
+            <p class="template-tile-desc">Bold colour block across the header.</p>
+          </div>
+        </div>
+        <div class="template-tile" data-tiers="basic mid advanced" data-photo="false">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-minimalist.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-minimalist.png" alt="Minimalist template: minimal hairline rules, no colour blocks, sample CV content shown." loading="lazy" width="460" height="660">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name">Minimalist</div>
+            <p class="template-tile-desc">Minimal hairline rules, no colour blocks.</p>
+          </div>
+        </div>
+        <div class="template-tile" data-tiers="mid advanced" data-photo="true">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-photo-sidebar.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-photo-sidebar.png" alt="Photo Sidebar template: photo and contact details in a side column, sample CV content shown." loading="lazy" width="460" height="660">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name"><span class="photo-dot" aria-hidden="true"></span>Photo Sidebar</div>
+            <p class="template-tile-desc">Photo and contact details in a side column.</p>
+          </div>
+        </div>
+        <div class="template-tile" data-tiers="mid advanced" data-photo="true">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-photo-banded.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-photo-banded.png" alt="Photo Banded template: photo slot with banded section headings, sample CV content shown." loading="lazy" width="460" height="660">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name"><span class="photo-dot" aria-hidden="true"></span>Photo Banded</div>
+            <p class="template-tile-desc">Photo slot with banded section headings.</p>
+          </div>
+        </div>
+        <div class="template-tile" data-tiers="mid advanced" data-photo="false">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-banded.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-banded.png" alt="Banded template: coloured bands mark each section heading, sample CV content shown." loading="lazy" width="460" height="660">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name">Banded</div>
+            <p class="template-tile-desc">Coloured bands mark each section heading.</p>
+          </div>
+        </div>
+        <div class="template-tile" data-tiers="mid advanced" data-photo="false">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-compact.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-compact.png" alt="Compact template: dense layout, fits more onto one page, sample CV content shown." loading="lazy" width="460" height="660">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name">Compact</div>
+            <p class="template-tile-desc">Dense layout, fits more onto one page.</p>
           </div>
         </div>
       </div>
 
-      <p class="templates-note">Sample content shown ("Jane Applicant") is a placeholder, not a real customer's CV. Every template is black-and-white by default for the cleanest ATS parsing, with one optional accent-colour option from Mid tier up.</p>
+      <p class="template-empty" id="template-empty" hidden>No templates match that filter combination.</p>
+
+      <p class="templates-note">Advanced: 10 templates available now (same set as Mid. A WhatsApp platform limit caps how many we can list in one menu, and more are on the way). Sample content shown ("Jane Applicant") is a placeholder, not a real customer's CV. Every template is black-and-white by default for reliable ATS parsing, with one optional accent-colour option from Mid tier up.</p>
     </div>
   </section>
 
@@ -271,38 +390,56 @@
             <span class="price-tier">Basic</span>
             <span class="price-amount">R30</span>
           </div>
-          <p class="price-desc">For a first, solid application.</p>
-          <ul class="price-features">
-            <li>One-page CV</li>
-            <li>Choice of 3 templates</li>
-            <li>One AI revision round</li>
-          </ul>
+          <div class="price-card-body">
+            <p class="price-desc">For a first, solid application.</p>
+            <ul class="price-features">
+              <li>One-page CV</li>
+              <li>Choice of 6 templates</li>
+              <li>
+                One AI revision round
+                <button type="button" class="feature-detail-toggle" data-detail-toggle>What's this?</button>
+                <span class="feature-detail" hidden>You tell CareerSignal what to change, in plain language. It edits just that section, not the whole CV.</span>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="price-card">
           <div class="price-card-head">
             <span class="price-tier">Mid</span>
             <span class="price-amount">R50</span>
           </div>
-          <p class="price-desc">More room for your full work history.</p>
-          <ul class="price-features">
-            <li>Two-page CV</li>
-            <li>Choice of 5 templates</li>
-            <li>Two AI revision rounds</li>
-          </ul>
+          <div class="price-card-body">
+            <p class="price-desc">More room for your full work history.</p>
+            <ul class="price-features">
+              <li>Two-page CV</li>
+              <li>Choice of 10 templates</li>
+              <li>
+                Two AI revision rounds
+                <button type="button" class="feature-detail-toggle" data-detail-toggle>What's this?</button>
+                <span class="feature-detail" hidden>Same as Basic's revision round, twice over. Ask for one change, then ask again if you still want something different. No extra charge either time.</span>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="price-card">
           <div class="price-card-head">
             <span class="price-tier">Advanced</span>
             <span class="price-amount">R90</span>
           </div>
-          <p class="price-desc">The complete package, tailored to the job.</p>
-          <ul class="price-features">
-            <li>Up to three-page CV</li>
-            <li>Choice of 10 templates</li>
-            <li>Job-tailored keyword pass</li>
-            <li>Cover letter included</li>
-            <li>Unlimited AI revisions, plus one human review</li>
-          </ul>
+          <div class="price-card-body">
+            <p class="price-desc">Everything CareerSignal offers, tailored to the job.</p>
+            <ul class="price-features">
+              <li>Up to three-page CV</li>
+              <li>Choice of 10 templates (same set as Mid)</li>
+              <li>Job-tailored keyword pass</li>
+              <li>Cover letter included</li>
+              <li>
+                Unlimited AI revisions
+                <button type="button" class="feature-detail-toggle" data-detail-toggle>What's this?</button>
+                <span class="feature-detail" hidden>As many rounds of "change this" as you need, at no extra charge, plus one human review pass included automatically. A real person checks your CV and makes a revision pass of their own.</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <p class="price-note">You always see a preview before you pay. If it's not right, you don't pay.</p>

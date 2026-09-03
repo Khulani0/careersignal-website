@@ -246,6 +246,17 @@
       applyFilter();
     });
   }
+
+  // Pricing cards link here with a specific tier already in mind ("Choice
+  // of 6 templates" etc). Pre-filter the grid to match instead of leaving
+  // the visitor to re-select the tier they just read about.
+  document.querySelectorAll(".tier-jump-link").forEach(function (link) {
+    link.addEventListener("click", function () {
+      var tier = link.getAttribute("data-jump-tier");
+      var targetBtn = document.querySelector('[data-filter-tier="' + tier + '"]');
+      if (targetBtn) targetBtn.click();
+    });
+  });
 })();
 
 // Pricing: expandable "what's this?" detail on specific feature lines.

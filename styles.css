@@ -721,6 +721,59 @@ section h2 {
   font-size: 0.98rem;
 }
 
+.ats-block {
+  margin-top: 44px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(237, 246, 250, 0.16);
+}
+.ats-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--paper);
+  margin-bottom: 20px;
+}
+.ats-rules {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 760px) {
+  .ats-rules { grid-template-columns: repeat(2, 1fr); gap: 16px 28px; }
+}
+.ats-rules li {
+  color: rgba(237, 246, 250, 0.84);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding-left: 18px;
+  position: relative;
+}
+.ats-rules li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.ats-rules strong { color: var(--paper); }
+
+.chatgpt-callout {
+  margin-top: 40px;
+  padding: 26px 28px;
+  background: rgba(0, 0, 0, 0.16);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.chatgpt-callout .ats-heading { margin-bottom: 10px; }
+.chatgpt-callout p {
+  color: rgba(237, 246, 250, 0.84);
+  font-size: 0.98rem;
+  max-width: 68ch;
+}
+
 /* ---------- Pricing ---------- */
 .pricing {
   background:
@@ -792,6 +845,12 @@ section h2 {
   font-weight: 700;
   flex-shrink: 0;
 }
+.tier-jump-link {
+  color: var(--ink-soft);
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+.tier-jump-link:hover { color: var(--gold-deep); }
 .price-note {
   margin-top: 28px;
   color: var(--ink-soft);

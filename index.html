@@ -159,71 +159,99 @@
         </div>
       </div>
 
-      <div class="chat-transcript">
-       <div class="chat-transcript-inner">
-        <div class="chat-window" role="img" aria-label="A WhatsApp conversation showing four steps: tap to start, tell your story by uploading a CV, typing, or sending a voice note, seeing a preview before paying, and receiving the finished CV.">
-          <div class="chat-bar">
-            <div class="chat-bar-avatar">CS</div>
-            <div class="chat-bar-name">CareerSignal</div>
-          </div>
-          <div class="chat-body">
+      <div class="scrolly" id="how-scrolly">
+        <div class="scrolly-track" id="scrollyTrack">
+          <div class="scrolly-stage">
+            <div class="scrolly-inner">
 
-            <div class="bubble bubble-in">
-              <p>Hi! I'm CareerSignal 👋 I'll help you build a real CV, right here on WhatsApp. Ready to start?</p>
-              <span class="bubble-time">09:14</span>
-            </div>
-            <div class="bubble bubble-out">
-              <p>Yes let's go</p>
-              <span class="bubble-time">09:14 <span class="ticks">✓✓</span></span>
-            </div>
-            <div class="step-label"><span>1</span> Tap to start</div>
+              <div class="scrolly-rail" aria-hidden="true">
+                <button type="button" class="rail-dot active" data-step="1" aria-label="Step 1"></button>
+                <span class="rail-line" data-step="1"></span>
+                <button type="button" class="rail-dot" data-step="2" aria-label="Step 2"></button>
+                <span class="rail-line" data-step="2"></span>
+                <button type="button" class="rail-dot" data-step="3" aria-label="Step 3"></button>
+                <span class="rail-line" data-step="3"></span>
+                <button type="button" class="rail-dot" data-step="4" aria-label="Step 4"></button>
+              </div>
 
-            <div class="bubble bubble-in">
-              <p>Great. Send me your old CV, type out your work history, or just send a voice note telling me about your last job.</p>
-              <span class="bubble-time">09:15</span>
-            </div>
-            <div class="bubble bubble-out bubble-voice">
-              <span class="voice-icon" aria-hidden="true">🎤</span>
-              <span class="voice-wave" aria-hidden="true"></span>
-              <span class="voice-time">0:38</span>
-              <span class="bubble-time">09:16 <span class="ticks">✓✓</span></span>
-            </div>
-            <div class="step-label"><span>2</span> Tell your story: CV, text, or voice note</div>
+              <div class="scrolly-text">
+                <div class="scrolly-panel active" data-panel="1">
+                  <div class="scrolly-num">01 &middot; Tap to start</div>
+                  <h3>No app, no registration.</h3>
+                  <p>Just a WhatsApp number you already have. The conversation starts the moment you say hello.</p>
+                </div>
+                <div class="scrolly-panel" data-panel="2">
+                  <div class="scrolly-num">02 &middot; Tell your story</div>
+                  <h3>Type it, or just talk.</h3>
+                  <p>A voice note works exactly the same as typing. If anything's unclear, CareerSignal asks instead of guessing.</p>
+                </div>
+                <div class="scrolly-panel" data-panel="3">
+                  <div class="scrolly-num">03 &middot; Preview first</div>
+                  <h3>You see it before you pay.</h3>
+                  <p>Your CV comes back as plain text in the chat. Nothing is charged until you approve it.</p>
+                </div>
+                <div class="scrolly-panel" data-panel="4">
+                  <div class="scrolly-num">04 &middot; Get your CV</div>
+                  <h3>Ready to send, same conversation.</h3>
+                  <p>The finished PDF is delivered right there in WhatsApp. No download link, no separate app to open.</p>
+                </div>
+              </div>
 
-            <div class="bubble bubble-in">
-              <p>Got it. I won't add anything you didn't tell me. If something's unclear, I'll ask. Here's your CV so far 👇</p>
-              <span class="bubble-time">09:18</span>
-            </div>
-            <div class="bubble bubble-in">
-              <p><strong>Nomvula Dlamini</strong><br>Retail Sales Assistant<br><br><strong>Experience</strong><br>Sales Assistant, Boxer Superstores<br>Jan 2023 to Present<br><br><strong>Education</strong><br>National Senior Certificate, 2021</p>
-              <span class="bubble-time">09:18</span>
-            </div>
-            <div class="step-label"><span>3</span> See your preview before you pay anything</div>
+              <div class="scrolly-phone-col">
+                <div class="chat-window" role="img" aria-label="A WhatsApp conversation showing four steps: tap to start, tell your story by uploading a CV, typing, or sending a voice note, seeing a preview before paying, and receiving the finished CV.">
+                  <div class="chat-bar">
+                    <div class="chat-bar-avatar">CS</div>
+                    <div class="chat-bar-name">CareerSignal</div>
+                  </div>
+                  <div class="chat-body" id="scrollyChatBody">
 
-            <div class="bubble bubble-out">
-              <p>Looks right! I'll take the Mid tier</p>
-              <span class="bubble-time">09:20 <span class="ticks">✓✓</span></span>
-            </div>
-            <div class="bubble bubble-in bubble-doc">
-              <span class="doc-icon" aria-hidden="true">📄</span>
-              <span class="doc-name">CV_Final.pdf</span>
-              <span class="bubble-time">09:22</span>
-            </div>
-            <div class="step-label"><span>4</span> Get your finished CV</div>
+                    <div class="bubble bubble-in" data-stage="1">
+                      <p>Hi! I'm CareerSignal 👋 I'll help you build a real CV, right here on WhatsApp. Ready to start?</p>
+                      <span class="bubble-time">09:14</span>
+                    </div>
+                    <div class="bubble bubble-out" data-stage="1">
+                      <p>Yes let's go</p>
+                      <span class="bubble-time">09:14 <span class="ticks">✓✓</span></span>
+                    </div>
 
+                    <div class="bubble bubble-in" data-stage="2">
+                      <p>Great. Send me your old CV, type out your work history, or just send a voice note telling me about your last job.</p>
+                      <span class="bubble-time">09:15</span>
+                    </div>
+                    <div class="bubble bubble-out bubble-voice" data-stage="2">
+                      <span class="voice-icon" aria-hidden="true">🎤</span>
+                      <span class="voice-wave" aria-hidden="true"></span>
+                      <span class="voice-time">0:38</span>
+                      <span class="bubble-time">09:16 <span class="ticks">✓✓</span></span>
+                    </div>
+
+                    <div class="bubble bubble-in" data-stage="3">
+                      <p>Got it. I won't add anything you didn't tell me. If something's unclear, I'll ask. Here's your CV so far 👇</p>
+                      <span class="bubble-time">09:18</span>
+                    </div>
+                    <div class="bubble bubble-in" data-stage="3">
+                      <p><strong>Nomvula Dlamini</strong><br>Retail Sales Assistant<br><br><strong>Experience</strong><br>Sales Assistant, Boxer Superstores<br>Jan 2023 to Present<br><br><strong>Education</strong><br>National Senior Certificate, 2021</p>
+                      <span class="bubble-time">09:18</span>
+                    </div>
+
+                    <div class="bubble bubble-out" data-stage="4">
+                      <p>Looks right! I'll take the Mid tier</p>
+                      <span class="bubble-time">09:20 <span class="ticks">✓✓</span></span>
+                    </div>
+                    <div class="bubble bubble-in bubble-doc" data-stage="4">
+                      <span class="doc-icon" aria-hidden="true">📄</span>
+                      <span class="doc-name">CV_Final.pdf</span>
+                      <span class="bubble-time">09:22</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
-        <div class="chat-controls">
-          <button type="button" id="chat-prev" class="btn-ghost">&larr; Back</button>
-          <div class="step-dots" role="group" aria-label="Jump to a step">
-            <button type="button" class="step-dot" data-step="1" aria-current="false" aria-label="Step 1: Tap to start"></button>
-            <button type="button" class="step-dot" data-step="2" aria-current="false" aria-label="Step 2: Tell your story"></button>
-            <button type="button" class="step-dot" data-step="3" aria-current="false" aria-label="Step 3: Preview first"></button>
-            <button type="button" class="step-dot" data-step="4" aria-current="false" aria-label="Step 4: Get your CV"></button>
-          </div>
-          <button type="button" id="chat-next" class="btn-ghost">Next &rarr;</button>
-        </div>
-       </div>
+        <p class="scroll-hint">&darr; scroll to play &darr;</p>
       </div>
     </div>
   </section>
@@ -425,6 +453,33 @@
       </div>
 
       <p class="guide-link"><a href="/guides/ats-cv-south-africa">Read the full guide to ATS formatting &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- BULLET CHECKER -->
+  <section class="checker" id="bullet-checker" aria-labelledby="checker-heading">
+    <div class="wrap">
+      <p class="eyebrow">Try it yourself</p>
+      <h2 id="checker-heading">Paste one bullet from your CV. See what the rules actually catch.</h2>
+      <p class="section-lead">This checks your bullet against CareerSignal's real writing rules, the same ones every template is built on. It's not a full document scan (that needs the actual PDF); this is the writing check on its own.</p>
+
+      <div class="checker-box">
+        <div class="checker-input">
+          <label for="bulletInput">Your CV bullet</label>
+          <textarea id="bulletInput" placeholder="e.g. Responsible for managing the till and helping customers with queries.">Responsible for managing the till and helping customers with queries.</textarea>
+          <div class="try-row">
+            <button type="button" class="try-chip" data-fill="Responsible for managing the till and helping customers with queries.">Weak example</button>
+            <button type="button" class="try-chip" data-fill="Managed the till and stock counts for a team of 4, cutting checkout wait times by handling peak-hour queues.">Better example</button>
+            <button type="button" class="try-chip" data-fill="I spearheaded a dynamic, results-driven approach to leveraging customer relationships.">Buzzword example</button>
+          </div>
+        </div>
+        <div class="checker-output">
+          <span class="checker-output-label">What the rules catch</span>
+          <div id="checkResults"></div>
+          <div class="verdict" id="verdictBox" hidden></div>
+          <p class="checker-note">Rules pulled from Sections 2 and 5 of CareerSignal's Tier 1 Universal Core Ruleset, the same document every template is built against.</p>
+        </div>
+      </div>
     </div>
   </section>
 

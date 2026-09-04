@@ -1,201 +1,91 @@
+// How it works: scroll-linked chat demo. Scroll position through a tall
+// track drives which of the 4 real stages is showing, both in the text
+// panel and in the phone. Real conversation content, unchanged from the
+// previous click-through version, just re-driven by scroll instead of
+// timers or buttons.
 (function () {
   "use strict";
 
-  var chatBody = document.querySelector(".chat-body");
-  if (!chatBody) return;
+  var track = document.getElementById("scrollyTrack");
+  var chatBody = document.getElementById("scrollyChatBody");
+  if (!track || !chatBody) return;
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var items = Array.prototype.slice.call(
-    chatBody.querySelectorAll(".bubble, .step-label")
-  );
-
-  var controls = document.querySelector(".chat-controls");
-
-  if (items.length === 0) return;
+  var bubbles = Array.prototype.slice.call(chatBody.querySelectorAll("[data-stage]"));
+  var panels = Array.prototype.slice.call(document.querySelectorAll(".scrolly-panel"));
+  var dots = Array.prototype.slice.call(document.querySelectorAll(".rail-dot"));
+  var lines = Array.prototype.slice.call(document.querySelectorAll(".rail-line"));
+  var totalStages = panels.length;
 
   if (reduceMotion) {
-    // Skip the animated loop, but the .js class already hid every bubble
-    // via CSS, so reveal them all at once instead of leaving it blank.
-    items.forEach(function (el) {
+    // CSS drops the sticky/scroll-jacking mechanism and stacks every panel
+    // in prefers-reduced-motion. Just reveal every bubble to match, once,
+    // no scroll listener needed.
+    bubbles.forEach(function (el) {
       el.hidden = false;
       el.classList.add("msg-visible");
     });
-    // Nothing to step through when everything's already shown at once.
-    if (controls) controls.hidden = true;
     return;
   }
 
-  var TYPING_MS = 850;
-  var AFTER_IN_MS = 450;
-  var SEND_DELAY_MS = 300;
-  var AFTER_OUT_MS = 450;
-  var STEP_MS = 550;
-  var LOOP_PAUSE_MS = 2200;
-
-  var typingBubble = document.createElement("div");
-  typingBubble.className = "bubble bubble-in bubble-typing";
-  typingBubble.setAttribute("aria-hidden", "true");
-  typingBubble.innerHTML =
-    '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
-
-  var running = true;
-  var manual = false;
-  var timer = null;
-
-  // Index (within `items`) of each of the 4 real stages, keyed by the
-  // .step-label that marks the end of that stage.
-  var stageEndIndex = items.reduce(function (acc, el, i) {
-    if (el.classList.contains("step-label")) acc.push(i);
-    return acc;
-  }, []);
   var currentStage = 0;
 
-  function wait(ms) {
-    return new Promise(function (resolve) {
-      timer = setTimeout(resolve, ms);
-    });
-  }
-
-  function scrollToBottom(instant) {
-    chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: instant ? "auto" : "smooth" });
-  }
-
-  function showTyping() {
-    typingBubble.classList.add("msg-visible");
-    chatBody.appendChild(typingBubble);
-    scrollToBottom();
-    return wait(TYPING_MS);
-  }
-
-  function hideTyping() {
-    if (typingBubble.parentNode) typingBubble.parentNode.removeChild(typingBubble);
-  }
-
-  function reveal(el) {
-    el.hidden = false;
-    scrollToBottom();
-    // Two rAFs so the browser commits the un-hidden (opacity: 0) frame
-    // before the class flips, otherwise the fade-in transition is skipped.
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        el.classList.add("msg-visible");
-      });
-    });
-  }
-
-  function reset() {
-    items.forEach(function (el) {
-      el.classList.remove("msg-visible");
-      el.hidden = true;
-    });
-    chatBody.scrollTo({ top: 0, behavior: "auto" });
-  }
-
-  async function playOnce() {
-    for (var i = 0; i < items.length; i++) {
-      if (!running) return;
-      var el = items[i];
-
-      if (el.classList.contains("bubble-in")) {
-        await showTyping();
-        if (!running) return;
-        hideTyping();
-        reveal(el);
-        await wait(AFTER_IN_MS);
-      } else if (el.classList.contains("bubble-out")) {
-        await wait(SEND_DELAY_MS);
-        if (!running) return;
-        reveal(el);
-        await wait(AFTER_OUT_MS);
-      } else {
-        reveal(el);
-        await wait(STEP_MS);
-      }
-    }
-  }
-
-  async function loop() {
-    while (running) {
-      reset();
-      await wait(120);
-      await playOnce();
-      if (!running) return;
-      await wait(LOOP_PAUSE_MS);
-    }
-  }
-
-  // ---- Manual step-through controls ----
-  function updateControlsState() {
-    if (!controls) return;
-    var prevBtn = document.getElementById("chat-prev");
-    var nextBtn = document.getElementById("chat-next");
-    if (prevBtn) prevBtn.disabled = currentStage <= 1;
-    if (nextBtn) nextBtn.disabled = currentStage >= stageEndIndex.length;
-    controls.querySelectorAll(".step-dot").forEach(function (dot) {
-      var stage = parseInt(dot.getAttribute("data-step"), 10);
-      dot.setAttribute("aria-current", stage === currentStage ? "true" : "false");
-    });
-  }
-
-  function goToStage(stage) {
-    stage = Math.max(1, Math.min(stageEndIndex.length, stage));
-    if (!manual) {
-      manual = true;
-      running = false;
-      hideTyping();
-      if (timer) clearTimeout(timer);
-    }
+  function renderStage(stage) {
+    if (stage === currentStage) return;
     currentStage = stage;
-    var endIndex = stageEndIndex[stage - 1];
-    reset();
-    for (var i = 0; i <= endIndex; i++) {
-      items[i].hidden = false;
-      items[i].classList.add("msg-visible");
-    }
-    scrollToBottom(true);
-    updateControlsState();
-  }
 
-  if (controls) {
-    var prevBtn = document.getElementById("chat-prev");
-    var nextBtn = document.getElementById("chat-next");
-    if (prevBtn) prevBtn.addEventListener("click", function () { goToStage(currentStage - 1 || 1); });
-    if (nextBtn) nextBtn.addEventListener("click", function () { goToStage((currentStage || 0) + 1); });
-    controls.querySelectorAll(".step-dot").forEach(function (dot) {
-      dot.addEventListener("click", function () {
-        goToStage(parseInt(dot.getAttribute("data-step"), 10));
-      });
+    bubbles.forEach(function (el) {
+      var show = parseInt(el.getAttribute("data-stage"), 10) <= stage;
+      el.hidden = !show;
+      el.classList.toggle("msg-visible", show);
     });
-    updateControlsState();
+    panels.forEach(function (el) {
+      el.classList.toggle("active", parseInt(el.getAttribute("data-panel"), 10) === stage);
+    });
+    dots.forEach(function (el) {
+      el.classList.toggle("active", parseInt(el.getAttribute("data-step"), 10) <= stage);
+    });
+    lines.forEach(function (el) {
+      el.classList.toggle("filled", parseInt(el.getAttribute("data-step"), 10) < stage);
+    });
+    chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "auto" });
   }
 
-  // Pause the loop while the demo is scrolled off-screen so it doesn't
-  // burn battery/CPU on a page people are no longer looking at. Once the
-  // visitor has taken manual control, leave it alone rather than
-  // resuming autoplay underneath them.
-  var section = document.getElementById("how-it-works");
-  if (section && "IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (manual) return;
-          if (entry.isIntersecting && !running) {
-            running = true;
-            loop();
-          } else if (!entry.isIntersecting && running) {
-            running = false;
-            hideTyping();
-            if (timer) clearTimeout(timer);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    running = false;
-    observer.observe(section);
-  } else {
-    loop();
+  function updateScrolly() {
+    var rect = track.getBoundingClientRect();
+    var trackHeight = track.offsetHeight;
+    var scrolled = -rect.top;
+    var progress = scrolled / (trackHeight - window.innerHeight);
+    progress = Math.max(0, Math.min(1, progress));
+    var stage = Math.floor(progress * totalStages) + 1;
+    stage = Math.max(1, Math.min(totalStages, stage));
+    renderStage(stage);
   }
+
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        updateScrolly();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  updateScrolly();
+
+  // Dots are a real, clickable way to jump for anyone not scrolling
+  // through normally (keyboard nav, or just wanting to skip ahead).
+  dots.forEach(function (dot) {
+    dot.addEventListener("click", function () {
+      var stage = parseInt(dot.getAttribute("data-step"), 10);
+      var trackTop = track.getBoundingClientRect().top + window.scrollY;
+      var trackHeight = track.offsetHeight;
+      var targetProgress = (stage - 0.5) / totalStages;
+      var targetY = trackTop + targetProgress * (trackHeight - window.innerHeight);
+      window.scrollTo({ top: targetY, behavior: "smooth" });
+    });
+  });
 })();
 
 // Template gallery: filter by tier and by photo-capable, client-side over
@@ -273,4 +163,95 @@
       btn.textContent = isHidden ? "Hide" : "What's this?";
     });
   });
+})();
+
+// Bullet checker: runs entirely client-side against the real rules in
+// tier1-ruleset.md Sections 2 (banned AI-tell phrases) and 5 (the ACE
+// bullet framework: action-first, no redundant pronoun, quantify what's
+// real). Nothing here is sent anywhere; it's a plain-text check in the
+// browser.
+(function () {
+  "use strict";
+
+  var input = document.getElementById("bulletInput");
+  var resultsEl = document.getElementById("checkResults");
+  var verdictEl = document.getElementById("verdictBox");
+  if (!input || !resultsEl || !verdictEl) return;
+
+  // tier1-ruleset.md Section 2, rule 2: the exact banned label-words,
+  // unless the person's own words used them.
+  var buzzwords = ["spearheaded", "leveraged", "dynamic", "results-driven", "passionate", "proven track record"];
+  var weakOpeners = ["responsible for", "worked on", "helped with", "was in charge of", "duties included"];
+
+  function runCheck() {
+    var text = input.value.trim();
+    var lower = text.toLowerCase();
+    var rows = [];
+    var failCount = 0;
+
+    if (!text) {
+      resultsEl.innerHTML = '<div class="check-row"><span class="check-mk info">&middot;</span><span>Type or paste a bullet to see the check.</span></div>';
+      verdictEl.hidden = true;
+      return;
+    }
+
+    // Section 5: "start with a verb showing what the person actually did"
+    var openerHit = weakOpeners.filter(function (w) { return lower.indexOf(w) === 0; })[0];
+    if (openerHit) {
+      rows.push({ mk: "fail", text: 'Starts with "' + openerHit + '," not an action verb. Try opening with what you actually did.' });
+      failCount++;
+    } else {
+      rows.push({ mk: "pass", text: "Opens with an action, not a weak phrase." });
+    }
+
+    // Section 5: "Avoid 'I' and 'we' inside bullets, the pronoun is redundant"
+    var pronounHit = /\b(i|we)\b/i.test(text);
+    if (pronounHit) {
+      rows.push({ mk: "fail", text: 'Uses "I" or "we." The bullet format already implies first person, drop the pronoun.' });
+      failCount++;
+    } else {
+      rows.push({ mk: "pass", text: "No redundant pronoun." });
+    }
+
+    // Section 2, rule 2: the exact banned-phrase list
+    var buzzHit = buzzwords.filter(function (b) { return lower.indexOf(b) !== -1; });
+    if (buzzHit.length) {
+      rows.push({ mk: "fail", text: 'Uses an AI-tell phrase: "' + buzzHit[0] + '." Only keep it if it is genuinely your own word for the job.' });
+      failCount++;
+    } else {
+      rows.push({ mk: "pass", text: "No banned buzzwords." });
+    }
+
+    // Section 5: "Quantify wherever real data exists"
+    var hasNumber = /\d/.test(text);
+    if (hasNumber) {
+      rows.push({ mk: "pass", text: "Includes a real number, exactly what the ACE framework wants quantified." });
+    } else {
+      rows.push({ mk: "info", text: "No number yet. Add one only if it's real, never invent a statistic." });
+    }
+
+    resultsEl.innerHTML = rows.map(function (r) {
+      var mkChar = r.mk === "pass" ? "✓" : r.mk === "fail" ? "✕" : "i";
+      return '<div class="check-row"><span class="check-mk ' + r.mk + '">' + mkChar + "</span><span>" + r.text + "</span></div>";
+    }).join("");
+
+    verdictEl.hidden = false;
+    if (failCount === 0) {
+      verdictEl.className = "verdict good";
+      verdictEl.textContent = "This bullet follows CareerSignal's writing rules.";
+    } else {
+      verdictEl.className = "verdict needs-work";
+      verdictEl.textContent = failCount + (failCount > 1 ? " things" : " thing") + " to fix before this matches CareerSignal's standard.";
+    }
+  }
+
+  input.addEventListener("input", runCheck);
+  document.querySelectorAll(".try-chip").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      input.value = chip.getAttribute("data-fill");
+      runCheck();
+      input.focus();
+    });
+  });
+  runCheck();
 })();

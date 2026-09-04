@@ -255,3 +255,67 @@
   });
   runCheck();
 })();
+
+// Guide page: mistake/fix toggle under each rule. Plain class swap, one
+// pair of panels per rule, nothing dynamic beyond show/hide.
+(function () {
+  "use strict";
+
+  document.querySelectorAll("[data-rule-toggle]").forEach(function (toggle) {
+    var buttons = toggle.querySelectorAll(".rule-toggle-btn");
+    var panels = toggle.querySelectorAll(".rule-toggle-panel");
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var show = btn.getAttribute("data-show");
+        buttons.forEach(function (b) { b.classList.toggle("active", b === btn); });
+        panels.forEach(function (p) {
+          p.hidden = p.getAttribute("data-panel") !== show;
+        });
+      });
+    });
+  });
+})();
+
+// Guide page: scroll-spy nav. Highlights whichever rule heading has most
+// recently scrolled past a fixed line near the top of the viewport;
+// clicking a nav entry is a plain anchor link, no JS needed for that part.
+// A scroll-position sweep rather than IntersectionObserver's threshold/
+// rootMargin tuning, since sections here are tall enough (toggle boxes
+// included) that a narrow intersection band was skipping entries.
+(function () {
+  "use strict";
+
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".guide-nav a[data-spy]"));
+  if (navLinks.length === 0) return;
+
+  var targets = navLinks
+    .map(function (link) {
+      var id = link.getAttribute("href").slice(1);
+      var el = document.getElementById(id);
+      return el ? { link: link, el: el } : null;
+    })
+    .filter(Boolean);
+  if (targets.length === 0) return;
+
+  var LINE = 140; // px from viewport top counted as "current section"
+
+  function update() {
+    var active = targets[0];
+    for (var i = 0; i < targets.length; i++) {
+      if (targets[i].el.getBoundingClientRect().top <= LINE) active = targets[i];
+    }
+    navLinks.forEach(function (l) { l.classList.toggle("active", l === active.link); });
+  }
+
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        update();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  update();
+})();

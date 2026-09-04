@@ -60,41 +60,197 @@
     <div class="wrap">
       <p class="eyebrow">Guide</p>
       <h1>What actually makes a CV pass or fail ATS screening</h1>
-      <p class="hero-sub">Not the buzzword. The specific, checkable rules a scanning system applies before a human ever reads your CV.</p>
+      <p class="hero-sub">Not the buzzword. The specific, checkable rules a scanning system applies before a human ever reads your CV. Click "See the fix" under any rule to compare it side by side.</p>
+    </div>
+  </section>
+
+  <section class="guide-body">
+    <div class="wrap guide-layout">
+      <nav class="guide-nav" aria-label="Rules on this page">
+        <a href="#rule-single-column" data-spy>Single column</a>
+        <a href="#rule-headings" data-spy>Section headings</a>
+        <a href="#rule-header-footer" data-spy>Header or footer</a>
+        <a href="#rule-icons" data-spy>Icons</a>
+        <a href="#rule-real-text" data-spy>Real text</a>
+        <a href="#rule-fonts" data-spy>Web-safe fonts</a>
+        <a href="#rule-one-page" data-spy>One page</a>
+        <a href="#bullet-checker" data-spy>Try the checker</a>
+      </nav>
+
+      <div class="page-content guide-article">
+        <p>Most job applications in South Africa today pass through an Applicant Tracking System (ATS) before a person sees them. That system tries to pull structured data out of your CV: your name, dates, job titles, skills. If it can't extract a field cleanly, that information effectively doesn't exist to the recruiter, no matter how well it's written.</p>
+        <p>"ATS-optimised" gets used as a marketing label a lot. Here's what it actually means in practice, rule by rule.</p>
+
+        <h2 id="rule-single-column">Single column for anything that matters</h2>
+        <p>A sidebar can hold a skills list or contact details. A job title, date, or employer name should never live only in a sidebar, because a scanning system can scatter or drop sidebar content entirely. The safest layout keeps your core work history in a straight single column, with a sidebar used only for supplementary information.</p>
+        <div class="rule-toggle" data-rule-toggle>
+          <div class="rule-toggle-buttons">
+            <button type="button" class="rule-toggle-btn active" data-show="bad">See the mistake</button>
+            <button type="button" class="rule-toggle-btn" data-show="good">See the fix</button>
+          </div>
+          <div class="rule-toggle-panel active" data-panel="bad">
+            <div class="rule-sample rule-sample-sidebar">
+              <span class="rule-sample-side">Sales Assistant<br>ABC Retail<br>Jan 2023 to Present</span>
+              <span class="rule-sample-main">Assisted customers daily with queries and stock.</span>
+            </div>
+            <p class="rule-toggle-caption">Job title, employer, and dates only live in the sidebar column. A scanning system that skips or scatters sidebar content never sees them.</p>
+          </div>
+          <div class="rule-toggle-panel" data-panel="good" hidden>
+            <div class="rule-sample">
+              <span class="rule-sample-main"><strong>Sales Assistant, ABC Retail</strong><br>Jan 2023 to Present<br>Assisted customers daily with queries and stock.</span>
+            </div>
+            <p class="rule-toggle-caption">Job title, employer, and dates sit in the main single-column body, where every scanning system reads them.</p>
+          </div>
+        </div>
+
+        <h2 id="rule-headings">Standard section headings</h2>
+        <p>"Work Experience," "Education," "Skills." Not "My Journey" or "What I Bring." A creative section title is a real parsing risk, not just a style choice, because the system is often matching against a list of expected headings to know what it's looking at.</p>
+        <div class="rule-toggle" data-rule-toggle>
+          <div class="rule-toggle-buttons">
+            <button type="button" class="rule-toggle-btn active" data-show="bad">See the mistake</button>
+            <button type="button" class="rule-toggle-btn" data-show="good">See the fix</button>
+          </div>
+          <div class="rule-toggle-panel active" data-panel="bad">
+            <div class="rule-sample"><span class="rule-sample-heading">My Journey</span></div>
+            <p class="rule-toggle-caption">A creative heading a person understands, but a scanning system matching against expected section names may not register as "Work Experience" at all.</p>
+          </div>
+          <div class="rule-toggle-panel" data-panel="good" hidden>
+            <div class="rule-sample"><span class="rule-sample-heading">Work Experience</span></div>
+            <p class="rule-toggle-caption">A standard, recognisable heading every ATS is built to look for.</p>
+          </div>
+        </div>
+
+        <h2 id="rule-header-footer">Nothing hidden in a header or footer</h2>
+        <p>Your phone number and email should sit in the main body of the document. Many scanning systems skip headers and footers entirely, so contact information placed there may as well not exist to the system reading it.</p>
+        <div class="rule-toggle" data-rule-toggle>
+          <div class="rule-toggle-buttons">
+            <button type="button" class="rule-toggle-btn active" data-show="bad">See the mistake</button>
+            <button type="button" class="rule-toggle-btn" data-show="good">See the fix</button>
+          </div>
+          <div class="rule-toggle-panel active" data-panel="bad">
+            <div class="rule-sample rule-sample-header">
+              <span class="rule-sample-tag">Page header</span>
+              <span class="rule-sample-faded">071 234 5678 &middot; nomvula@email.com</span>
+              <hr>
+              <span class="rule-sample-main">Nomvula Dlamini</span>
+            </div>
+            <p class="rule-toggle-caption">Contact details placed in the document's header field. Many parsers never read header or footer regions at all.</p>
+          </div>
+          <div class="rule-toggle-panel" data-panel="good" hidden>
+            <div class="rule-sample">
+              <span class="rule-sample-main"><strong>Nomvula Dlamini</strong><br>071 234 5678 &middot; nomvula@email.com</span>
+            </div>
+            <p class="rule-toggle-caption">Same details, moved into the document body directly under the name, where they're always read.</p>
+          </div>
+        </div>
+
+        <h2 id="rule-icons">No icons standing in for words</h2>
+        <p>A checkmark, a star rating, or an icon isn't read the same way as text by parsing software. Plain text and standard bullet points (solid circles, squares, or dashes) are the safe choice. Custom symbols, checkmarks, or arrow glyphs as bullet markers are not.</p>
+        <div class="rule-toggle" data-rule-toggle>
+          <div class="rule-toggle-buttons">
+            <button type="button" class="rule-toggle-btn active" data-show="bad">See the mistake</button>
+            <button type="button" class="rule-toggle-btn" data-show="good">See the fix</button>
+          </div>
+          <div class="rule-toggle-panel active" data-panel="bad">
+            <div class="rule-sample"><span class="rule-sample-main">✔ Proficient in Excel</span></div>
+            <p class="rule-toggle-caption">A checkmark standing in for the word itself. Parsing software doesn't reliably read it as meaningful content.</p>
+          </div>
+          <div class="rule-toggle-panel" data-panel="good" hidden>
+            <div class="rule-sample"><span class="rule-sample-main">&bull; Proficient in Excel</span></div>
+            <p class="rule-toggle-caption">A standard bullet point and plain text. Reads the same to a person and to a scanning system.</p>
+          </div>
+        </div>
+
+        <h2 id="rule-real-text">Real text, not a picture of text</h2>
+        <p>A CV has to be built from selectable text in the PDF itself, never a scanned image or a PDF where the text is actually a picture. If you can't select and copy the words, a scanning system usually can't read them either.</p>
+        <div class="rule-toggle" data-rule-toggle>
+          <div class="rule-toggle-buttons">
+            <button type="button" class="rule-toggle-btn active" data-show="bad">See the mistake</button>
+            <button type="button" class="rule-toggle-btn" data-show="good">See the fix</button>
+          </div>
+          <div class="rule-toggle-panel active" data-panel="bad">
+            <div class="rule-sample rule-sample-image">Scanned image: the words on this line cannot be selected or copied.</div>
+            <p class="rule-toggle-caption">A photo or scan of a CV. Looks like text to a person, invisible to a parser.</p>
+          </div>
+          <div class="rule-toggle-panel" data-panel="good" hidden>
+            <div class="rule-sample"><span class="rule-sample-main">Sales Assistant, ABC Retail</span></div>
+            <p class="rule-toggle-caption">Real, selectable text in the PDF itself. Every CareerSignal CV is built this way, never rasterized.</p>
+          </div>
+        </div>
+
+        <h2 id="rule-fonts">Web-safe fonts only</h2>
+        <p>A clean, standard font, one of the small set that's guaranteed to render the same way everywhere: Arial, Calibri, Cambria, Garamond, Georgia, Helvetica, Tahoma, Times New Roman, Verdana. No decorative or script typefaces, which can fail to embed correctly and break text extraction.</p>
+        <div class="rule-toggle" data-rule-toggle>
+          <div class="rule-toggle-buttons">
+            <button type="button" class="rule-toggle-btn active" data-show="bad">See the mistake</button>
+            <button type="button" class="rule-toggle-btn" data-show="good">See the fix</button>
+          </div>
+          <div class="rule-toggle-panel active" data-panel="bad">
+            <div class="rule-sample"><span class="rule-sample-main rule-sample-script">Nomvula Dlamini</span></div>
+            <p class="rule-toggle-caption">A decorative or script typeface. Can fail to embed correctly in the PDF, breaking text extraction entirely.</p>
+          </div>
+          <div class="rule-toggle-panel" data-panel="good" hidden>
+            <div class="rule-sample"><span class="rule-sample-main rule-sample-safefont">Nomvula Dlamini</span></div>
+            <p class="rule-toggle-caption">A standard web-safe font. Renders and extracts identically everywhere.</p>
+          </div>
+        </div>
+
+        <h2 id="rule-one-page">One page when one page is honest</h2>
+        <p>Content should be sized to fit the page it belongs on, not padded with extra spacing or vague language to look fuller than it is. A shorter, honest CV reads better to both a scanning system and a person than a stretched one.</p>
+        <div class="rule-toggle" data-rule-toggle>
+          <div class="rule-toggle-buttons">
+            <button type="button" class="rule-toggle-btn active" data-show="bad">See the mistake</button>
+            <button type="button" class="rule-toggle-btn" data-show="good">See the fix</button>
+          </div>
+          <div class="rule-toggle-panel active" data-panel="bad">
+            <div class="rule-sample rule-sample-padded">
+              <span>Assisted customers daily.</span>
+              <span>Managed stock and displays.</span>
+            </div>
+            <p class="rule-toggle-caption">Two short lines stretched with extra spacing to look like more content than there is.</p>
+          </div>
+          <div class="rule-toggle-panel" data-panel="good" hidden>
+            <div class="rule-sample rule-sample-compact">
+              <span>Assisted customers daily with product queries and purchases.</span>
+              <span>Managed stock levels and store displays.</span>
+            </div>
+            <p class="rule-toggle-caption">The same real content, written fully and set at normal spacing. Honest length, not stretched.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BULLET CHECKER (embedded, same tool as the homepage) -->
+  <section class="checker" id="bullet-checker" aria-labelledby="checker-heading">
+    <div class="wrap">
+      <p class="eyebrow">Try it yourself</p>
+      <h2 id="checker-heading">Paste one bullet from your CV. See what the rules actually catch.</h2>
+      <p class="section-lead">This checks your bullet against CareerSignal's real writing rules, the same ones every template is built on. It's not a full document scan (that needs the actual PDF); this is the writing check on its own.</p>
+
+      <div class="checker-box">
+        <div class="checker-input">
+          <label for="bulletInput">Your CV bullet</label>
+          <textarea id="bulletInput" placeholder="e.g. Responsible for managing the till and helping customers with queries.">Responsible for managing the till and helping customers with queries.</textarea>
+          <div class="try-row">
+            <button type="button" class="try-chip" data-fill="Responsible for managing the till and helping customers with queries.">Weak example</button>
+            <button type="button" class="try-chip" data-fill="Managed the till and stock counts for a team of 4, cutting checkout wait times by handling peak-hour queues.">Better example</button>
+            <button type="button" class="try-chip" data-fill="I spearheaded a dynamic, results-driven approach to leveraging customer relationships.">Buzzword example</button>
+          </div>
+        </div>
+        <div class="checker-output">
+          <span class="checker-output-label">What the rules catch</span>
+          <div id="checkResults"></div>
+          <div class="verdict" id="verdictBox" hidden></div>
+          <p class="checker-note">Rules pulled from Sections 2 and 5 of CareerSignal's Tier 1 Universal Core Ruleset, the same document every template is built against.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section>
     <div class="wrap page-content">
-      <p>Most job applications in South Africa today pass through an Applicant Tracking System (ATS) before a person sees them. That system tries to pull structured data out of your CV: your name, dates, job titles, skills. If it can't extract a field cleanly, that information effectively doesn't exist to the recruiter, no matter how well it's written.</p>
-      <p>"ATS-optimised" gets used as a marketing label a lot. Here's what it actually means in practice, rule by rule.</p>
-
-      <h2>Single column for anything that matters</h2>
-      <p>A sidebar can hold a skills list or contact details. A job title, date, or employer name should never live only in a sidebar, because a scanning system can scatter or drop sidebar content entirely. The safest layout keeps your core work history in a straight single column, with a sidebar used only for supplementary information.</p>
-
-      <h2>Standard section headings</h2>
-      <p>"Work Experience," "Education," "Skills." Not "My Journey" or "What I Bring." A creative section title is a real parsing risk, not just a style choice, because the system is often matching against a list of expected headings to know what it's looking at.</p>
-
-      <h2>Nothing hidden in a header or footer</h2>
-      <p>Your phone number and email should sit in the main body of the document. Many scanning systems skip headers and footers entirely, so contact information placed there may as well not exist to the system reading it.</p>
-
-      <h2>No icons standing in for words</h2>
-      <p>A checkmark, a star rating, or an icon isn't read the same way as text by parsing software. Plain text and standard bullet points (solid circles, squares, or dashes) are the safe choice. Custom symbols, checkmarks, or arrow glyphs as bullet markers are not.</p>
-
-      <h2>Real text, not a picture of text</h2>
-      <p>A CV has to be built from selectable text in the PDF itself, never a scanned image or a PDF where the text is actually a picture. If you can't select and copy the words, a scanning system usually can't read them either.</p>
-
-      <h2>Web-safe fonts only</h2>
-      <p>A clean, standard font, one of the small set that's guaranteed to render the same way everywhere: Arial, Calibri, Cambria, Garamond, Georgia, Helvetica, Tahoma, Times New Roman, Verdana. No decorative or script typefaces, which can fail to embed correctly and break text extraction.</p>
-
-      <h2>One page when one page is honest</h2>
-      <p>Content should be sized to fit the page it belongs on, not padded with extra spacing or vague language to look fuller than it is. A shorter, honest CV reads better to both a scanning system and a person than a stretched one.</p>
-
-      <div class="chatgpt-callout">
-        <h3 class="ats-heading">Why not just ask ChatGPT?</h3>
-        <p>A general-purpose AI chat can write CV text. It doesn't know, by default, that a two-column layout can scatter your dates when a scanning system reads it, that a phone number placed in a header can go invisible to that same system, or that a creative section title can fail to register as work experience at all. CareerSignal's entire template library is built around these formatting rules specifically, applied the same way every time, not decided fresh in a chat window.</p>
-      </div>
-
       <p>CareerSignal builds every CV, on every tier, to these same rules, over WhatsApp, with no app or laptop needed.</p>
 
       <!-- WHATSAPP LINK PLACEHOLDER: replace wa.me/PLACEHOLDER with the real WhatsApp number link once registration is complete -->
@@ -143,5 +299,6 @@
   </div>
 </footer>
 
+<script src="/script.js"></script>
 </body>
 </html>

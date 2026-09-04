@@ -801,19 +801,6 @@ section h2 {
 }
 .ats-rules strong { color: var(--paper); }
 
-.chatgpt-callout {
-  margin-top: 40px;
-  padding: 26px 28px;
-  background: rgba(0, 0, 0, 0.16);
-  border-left: 3px solid var(--gold);
-  border-radius: 0 var(--radius) var(--radius) 0;
-}
-.chatgpt-callout .ats-heading { margin-bottom: 10px; }
-.chatgpt-callout p {
-  color: rgba(237, 246, 250, 0.84);
-  font-size: 0.98rem;
-  max-width: 68ch;
-}
 .guide-link {
   margin-top: 24px;
 }
@@ -824,20 +811,160 @@ section h2 {
 }
 .guide-link a:hover { text-decoration: underline; }
 
-/* Guide pages (light background): the ATS/ChatGPT callout components are
-   normally used on the dark "why different" panel; re-themed here for a
-   light page background. */
-.page-content .chatgpt-callout {
-  margin-top: 40px;
+.page-content .btn-large { margin-top: 12px; }
+
+/* ---------- Guide page: scroll-spy nav + rule layout ---------- */
+.guide-body { padding-top: 48px; }
+.guide-layout {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .guide-layout { grid-template-columns: 1fr; gap: 0; }
+}
+.guide-article { padding: 0; }
+
+.guide-nav {
+  position: sticky;
+  top: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.guide-nav a {
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+}
+.guide-nav a:hover { color: var(--ink); }
+.guide-nav a.active {
+  color: var(--gold-deep);
+  background: var(--gold-wash);
+  border-left-color: var(--gold-deep);
+}
+@media (max-width: 860px) {
+  .guide-nav {
+    position: sticky;
+    top: 62px;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    padding: 10px 20px;
+    margin: 0 -20px 24px;
+    background: rgba(237, 246, 250, 0.95);
+    backdrop-filter: saturate(140%) blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .guide-nav a {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 999px;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+  }
+  .guide-nav a.active { border-color: var(--gold-deep); }
+}
+
+.rule-toggle {
+  margin-top: 18px;
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
   border-radius: var(--radius);
+  padding: 18px 20px;
   background: var(--paper);
 }
-.page-content .chatgpt-callout .ats-heading,
-.page-content .chatgpt-callout p {
+.rule-toggle-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.rule-toggle-btn {
+  border: 1px solid var(--line);
+  background: var(--paper-raised);
+  color: var(--ink-soft);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+.rule-toggle-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.rule-toggle-panel[hidden] { display: none; }
+.rule-toggle-caption {
+  margin-top: 12px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+.rule-sample {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 0.88rem;
   color: var(--ink);
 }
-.page-content .chatgpt-callout p { opacity: 0.82; }
-.page-content .btn-large { margin-top: 12px; }
+.rule-sample-main { display: block; line-height: 1.5; }
+.rule-sample-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: block;
+}
+.rule-sample-sidebar {
+  display: flex;
+  gap: 14px;
+}
+.rule-sample-side {
+  flex: 0 0 40%;
+  background: var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.rule-sample-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.rule-sample-tag {
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  background: var(--line);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.rule-sample-faded { color: var(--ink-soft); font-size: 0.82rem; }
+.rule-sample-header hr { border: none; border-top: 1px dashed var(--line); width: 100%; margin: 2px 0; }
+.rule-sample-image {
+  background: repeating-linear-gradient(45deg, var(--line), var(--line) 6px, transparent 6px, transparent 12px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.rule-sample-script { font-family: cursive; font-size: 1.3rem; }
+.rule-sample-safefont { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 1.1rem; }
+.rule-sample-padded { display: flex; flex-direction: column; gap: 22px; }
+.rule-sample-compact { display: flex; flex-direction: column; gap: 6px; }
 
 /* ---------- Bullet checker ---------- */
 .checker { background: var(--paper-raised); }

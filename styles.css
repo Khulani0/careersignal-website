@@ -773,6 +773,30 @@ section h2 {
   font-size: 0.98rem;
   max-width: 68ch;
 }
+.guide-link {
+  margin-top: 24px;
+}
+.guide-link a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+}
+.guide-link a:hover { text-decoration: underline; }
+
+/* Guide pages (light background): the ATS/ChatGPT callout components are
+   normally used on the dark "why different" panel; re-themed here for a
+   light page background. */
+.page-content .chatgpt-callout {
+  margin-top: 40px;
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+.page-content .chatgpt-callout .ats-heading,
+.page-content .chatgpt-callout p {
+  color: var(--ink);
+}
+.page-content .chatgpt-callout p { opacity: 0.82; }
+.page-content .btn-large { margin-top: 12px; }
 
 /* ---------- Pricing ---------- */
 .pricing {

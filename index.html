@@ -272,32 +272,6 @@
       </div>
 
       <div class="template-grid" id="template-grid">
-        <div class="template-tile" data-tiers="basic mid advanced" data-photo="true">
-          <picture>
-
-            <source srcset="/assets/templates/tmpl-photo.webp" type="image/webp">
-
-            <img src="/assets/templates/tmpl-photo.png" alt="Photo template: single column layout with an optional photo slot, rendered from the real one-page CV template with sample content." loading="lazy" width="460" height="399">
-
-          </picture>
-          <div class="template-tile-body">
-            <div class="template-tile-name"><span class="photo-dot" aria-hidden="true"></span>Photo</div>
-            <p class="template-tile-desc">Single column with an optional photo slot.</p>
-          </div>
-        </div>
-        <div class="template-tile" data-tiers="basic mid advanced" data-photo="true">
-          <picture>
-
-            <source srcset="/assets/templates/tmpl-photo-centered.webp" type="image/webp">
-
-            <img src="/assets/templates/tmpl-photo-centered.png" alt="Photo Centered template: centered header with a photo, rendered from the real one-page CV template with sample content." loading="lazy" width="460" height="399">
-
-          </picture>
-          <div class="template-tile-body">
-            <div class="template-tile-name"><span class="photo-dot" aria-hidden="true"></span>Photo Centered</div>
-            <p class="template-tile-desc">Centered header with a photo.</p>
-          </div>
-        </div>
         <div class="template-tile" data-tiers="basic mid advanced" data-photo="false">
           <picture>
 
@@ -307,8 +281,24 @@
 
           </picture>
           <div class="template-tile-body">
-            <div class="template-tile-name">Classic</div>
+            <div class="template-tile-name">
+              <span class="tile-name-text">Classic</span>
+              <span class="tile-accent-rule" aria-hidden="true"></span>
+              <span class="tile-badge badge-gold" data-badge-tiers="mid advanced" hidden>Recommended</span>
+            </div>
             <p class="template-tile-desc">Single column, traditional layout.</p>
+            <div class="color-picker" data-color-picker>
+              <span class="color-picker-label">Accent colour</span>
+              <div class="color-swatches" role="group" aria-label="Choose an accent colour for Classic">
+                <button type="button" class="color-swatch color-swatch-gray" data-color="grayscale" aria-pressed="true" aria-label="Black and white, default"></button>
+                <button type="button" class="color-swatch" data-color="deep-navy" data-hex="#1B2A4C" aria-pressed="false" aria-label="Deep Navy"></button>
+                <button type="button" class="color-swatch" data-color="burgundy" data-hex="#7A2333" aria-pressed="false" aria-label="Burgundy"></button>
+                <button type="button" class="color-swatch" data-color="forest-green" data-hex="#1F4D3A" aria-pressed="false" aria-label="Forest Green"></button>
+                <button type="button" class="color-swatch" data-color="charcoal" data-hex="#33363D" aria-pressed="false" aria-label="Charcoal"></button>
+                <button type="button" class="color-swatch" data-color="teal" data-hex="#1F5C5C" aria-pressed="false" aria-label="Teal"></button>
+                <button type="button" class="color-swatch" data-color="bronze" data-hex="#8C5A2B" aria-pressed="false" aria-label="Bronze"></button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="template-tile" data-tiers="basic mid advanced" data-photo="false">
@@ -320,8 +310,23 @@
 
           </picture>
           <div class="template-tile-body">
-            <div class="template-tile-name">Two-Column</div>
+            <div class="template-tile-name">
+              <span class="tile-name-text">Two-Column</span>
+              <span class="tile-accent-rule" aria-hidden="true"></span>
+            </div>
             <p class="template-tile-desc">Two columns, sidebar for contact and skills.</p>
+            <div class="color-picker" data-color-picker>
+              <span class="color-picker-label">Accent colour</span>
+              <div class="color-swatches" role="group" aria-label="Choose an accent colour for Two-Column">
+                <button type="button" class="color-swatch color-swatch-gray" data-color="grayscale" aria-pressed="true" aria-label="Black and white, default"></button>
+                <button type="button" class="color-swatch" data-color="deep-navy" data-hex="#1B2A4C" aria-pressed="false" aria-label="Deep Navy"></button>
+                <button type="button" class="color-swatch" data-color="burgundy" data-hex="#7A2333" aria-pressed="false" aria-label="Burgundy"></button>
+                <button type="button" class="color-swatch" data-color="forest-green" data-hex="#1F4D3A" aria-pressed="false" aria-label="Forest Green"></button>
+                <button type="button" class="color-swatch" data-color="charcoal" data-hex="#33363D" aria-pressed="false" aria-label="Charcoal"></button>
+                <button type="button" class="color-swatch" data-color="teal" data-hex="#1F5C5C" aria-pressed="false" aria-label="Teal"></button>
+                <button type="button" class="color-swatch" data-color="bronze" data-hex="#8C5A2B" aria-pressed="false" aria-label="Bronze"></button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="template-tile" data-tiers="basic mid advanced" data-photo="false">
@@ -333,8 +338,23 @@
 
           </picture>
           <div class="template-tile-body">
-            <div class="template-tile-name">Bold Header</div>
+            <div class="template-tile-name">
+              <span class="tile-name-text">Bold Header</span>
+              <span class="tile-accent-rule" aria-hidden="true"></span>
+            </div>
             <p class="template-tile-desc">Bold colour block across the header.</p>
+            <div class="color-picker" data-color-picker>
+              <span class="color-picker-label">Accent colour</span>
+              <div class="color-swatches" role="group" aria-label="Choose an accent colour for Bold Header">
+                <button type="button" class="color-swatch color-swatch-gray" data-color="grayscale" aria-pressed="true" aria-label="Black and white, default"></button>
+                <button type="button" class="color-swatch" data-color="deep-navy" data-hex="#1B2A4C" aria-pressed="false" aria-label="Deep Navy"></button>
+                <button type="button" class="color-swatch" data-color="burgundy" data-hex="#7A2333" aria-pressed="false" aria-label="Burgundy"></button>
+                <button type="button" class="color-swatch" data-color="forest-green" data-hex="#1F4D3A" aria-pressed="false" aria-label="Forest Green"></button>
+                <button type="button" class="color-swatch" data-color="charcoal" data-hex="#33363D" aria-pressed="false" aria-label="Charcoal"></button>
+                <button type="button" class="color-swatch" data-color="teal" data-hex="#1F5C5C" aria-pressed="false" aria-label="Teal"></button>
+                <button type="button" class="color-swatch" data-color="bronze" data-hex="#8C5A2B" aria-pressed="false" aria-label="Bronze"></button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="template-tile" data-tiers="basic mid advanced" data-photo="false">
@@ -346,34 +366,23 @@
 
           </picture>
           <div class="template-tile-body">
-            <div class="template-tile-name">Minimalist</div>
+            <div class="template-tile-name">
+              <span class="tile-name-text">Minimalist</span>
+              <span class="tile-accent-rule" aria-hidden="true"></span>
+            </div>
             <p class="template-tile-desc">Minimal hairline rules, no colour blocks.</p>
-          </div>
-        </div>
-        <div class="template-tile" data-tiers="mid advanced" data-photo="true">
-          <picture>
-
-            <source srcset="/assets/templates/tmpl-photo-sidebar.webp" type="image/webp">
-
-            <img src="/assets/templates/tmpl-photo-sidebar.png" alt="Photo Sidebar template: photo and contact details in a side column, rendered from the real one-page CV template with sample content." loading="lazy" width="460" height="399">
-
-          </picture>
-          <div class="template-tile-body">
-            <div class="template-tile-name"><span class="photo-dot" aria-hidden="true"></span>Photo Sidebar</div>
-            <p class="template-tile-desc">Photo and contact details in a side column.</p>
-          </div>
-        </div>
-        <div class="template-tile" data-tiers="mid advanced" data-photo="true">
-          <picture>
-
-            <source srcset="/assets/templates/tmpl-photo-banded.webp" type="image/webp">
-
-            <img src="/assets/templates/tmpl-photo-banded.png" alt="Photo Banded template: photo slot with banded section headings, rendered from the real one-page CV template with sample content." loading="lazy" width="460" height="399">
-
-          </picture>
-          <div class="template-tile-body">
-            <div class="template-tile-name"><span class="photo-dot" aria-hidden="true"></span>Photo Banded</div>
-            <p class="template-tile-desc">Photo slot with banded section headings.</p>
+            <div class="color-picker" data-color-picker>
+              <span class="color-picker-label">Accent colour</span>
+              <div class="color-swatches" role="group" aria-label="Choose an accent colour for Minimalist">
+                <button type="button" class="color-swatch color-swatch-gray" data-color="grayscale" aria-pressed="true" aria-label="Black and white, default"></button>
+                <button type="button" class="color-swatch" data-color="deep-navy" data-hex="#1B2A4C" aria-pressed="false" aria-label="Deep Navy"></button>
+                <button type="button" class="color-swatch" data-color="burgundy" data-hex="#7A2333" aria-pressed="false" aria-label="Burgundy"></button>
+                <button type="button" class="color-swatch" data-color="forest-green" data-hex="#1F4D3A" aria-pressed="false" aria-label="Forest Green"></button>
+                <button type="button" class="color-swatch" data-color="charcoal" data-hex="#33363D" aria-pressed="false" aria-label="Charcoal"></button>
+                <button type="button" class="color-swatch" data-color="teal" data-hex="#1F5C5C" aria-pressed="false" aria-label="Teal"></button>
+                <button type="button" class="color-swatch" data-color="bronze" data-hex="#8C5A2B" aria-pressed="false" aria-label="Bronze"></button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="template-tile" data-tiers="mid advanced" data-photo="false">
@@ -385,8 +394,23 @@
 
           </picture>
           <div class="template-tile-body">
-            <div class="template-tile-name">Banded</div>
+            <div class="template-tile-name">
+              <span class="tile-name-text">Banded</span>
+              <span class="tile-accent-rule" aria-hidden="true"></span>
+            </div>
             <p class="template-tile-desc">Coloured bands mark each section heading.</p>
+            <div class="color-picker" data-color-picker>
+              <span class="color-picker-label">Accent colour</span>
+              <div class="color-swatches" role="group" aria-label="Choose an accent colour for Banded">
+                <button type="button" class="color-swatch color-swatch-gray" data-color="grayscale" aria-pressed="true" aria-label="Black and white, default"></button>
+                <button type="button" class="color-swatch" data-color="deep-navy" data-hex="#1B2A4C" aria-pressed="false" aria-label="Deep Navy"></button>
+                <button type="button" class="color-swatch" data-color="burgundy" data-hex="#7A2333" aria-pressed="false" aria-label="Burgundy"></button>
+                <button type="button" class="color-swatch" data-color="forest-green" data-hex="#1F4D3A" aria-pressed="false" aria-label="Forest Green"></button>
+                <button type="button" class="color-swatch" data-color="charcoal" data-hex="#33363D" aria-pressed="false" aria-label="Charcoal"></button>
+                <button type="button" class="color-swatch" data-color="teal" data-hex="#1F5C5C" aria-pressed="false" aria-label="Teal"></button>
+                <button type="button" class="color-swatch" data-color="bronze" data-hex="#8C5A2B" aria-pressed="false" aria-label="Bronze"></button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="template-tile" data-tiers="mid advanced" data-photo="false">
@@ -398,15 +422,146 @@
 
           </picture>
           <div class="template-tile-body">
-            <div class="template-tile-name">Compact</div>
+            <div class="template-tile-name">
+              <span class="tile-name-text">Compact</span>
+              <span class="tile-accent-rule" aria-hidden="true"></span>
+            </div>
             <p class="template-tile-desc">Dense layout, fits more onto one page.</p>
+            <div class="color-picker" data-color-picker>
+              <span class="color-picker-label">Accent colour</span>
+              <div class="color-swatches" role="group" aria-label="Choose an accent colour for Compact">
+                <button type="button" class="color-swatch color-swatch-gray" data-color="grayscale" aria-pressed="true" aria-label="Black and white, default"></button>
+                <button type="button" class="color-swatch" data-color="deep-navy" data-hex="#1B2A4C" aria-pressed="false" aria-label="Deep Navy"></button>
+                <button type="button" class="color-swatch" data-color="burgundy" data-hex="#7A2333" aria-pressed="false" aria-label="Burgundy"></button>
+                <button type="button" class="color-swatch" data-color="forest-green" data-hex="#1F4D3A" aria-pressed="false" aria-label="Forest Green"></button>
+                <button type="button" class="color-swatch" data-color="charcoal" data-hex="#33363D" aria-pressed="false" aria-label="Charcoal"></button>
+                <button type="button" class="color-swatch" data-color="teal" data-hex="#1F5C5C" aria-pressed="false" aria-label="Teal"></button>
+                <button type="button" class="color-swatch" data-color="bronze" data-hex="#8C5A2B" aria-pressed="false" aria-label="Bronze"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="template-tile" data-tiers="basic mid advanced" data-photo="true">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-photo-centered.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-photo-centered.png" alt="Photo Centered template: centered header with a photo, rendered from the real one-page CV template with sample content." loading="lazy" width="460" height="399">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name">
+              <span class="photo-dot" aria-hidden="true"></span>
+              <span class="tile-name-text">Photo Centered</span>
+              <span class="tile-accent-rule" aria-hidden="true"></span>
+            </div>
+            <p class="template-tile-desc">Centered header with a photo.</p>
+            <div class="color-picker" data-color-picker>
+              <span class="color-picker-label">Accent colour</span>
+              <div class="color-swatches" role="group" aria-label="Choose an accent colour for Photo Centered">
+                <button type="button" class="color-swatch color-swatch-gray" data-color="grayscale" aria-pressed="true" aria-label="Black and white, default"></button>
+                <button type="button" class="color-swatch" data-color="deep-navy" data-hex="#1B2A4C" aria-pressed="false" aria-label="Deep Navy"></button>
+                <button type="button" class="color-swatch" data-color="burgundy" data-hex="#7A2333" aria-pressed="false" aria-label="Burgundy"></button>
+                <button type="button" class="color-swatch" data-color="forest-green" data-hex="#1F4D3A" aria-pressed="false" aria-label="Forest Green"></button>
+                <button type="button" class="color-swatch" data-color="charcoal" data-hex="#33363D" aria-pressed="false" aria-label="Charcoal"></button>
+                <button type="button" class="color-swatch" data-color="teal" data-hex="#1F5C5C" aria-pressed="false" aria-label="Teal"></button>
+                <button type="button" class="color-swatch" data-color="bronze" data-hex="#8C5A2B" aria-pressed="false" aria-label="Bronze"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="template-tile" data-tiers="basic mid advanced" data-photo="true">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-photo.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-photo.png" alt="Photo template: single column layout with an optional photo slot, rendered from the real one-page CV template with sample content." loading="lazy" width="460" height="399">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name">
+              <span class="photo-dot" aria-hidden="true"></span>
+              <span class="tile-name-text">Photo</span>
+              <span class="tile-accent-rule" aria-hidden="true"></span>
+            </div>
+            <p class="template-tile-desc">Single column with an optional photo slot.</p>
+            <div class="color-picker" data-color-picker>
+              <span class="color-picker-label">Accent colour</span>
+              <div class="color-swatches" role="group" aria-label="Choose an accent colour for Photo">
+                <button type="button" class="color-swatch color-swatch-gray" data-color="grayscale" aria-pressed="true" aria-label="Black and white, default"></button>
+                <button type="button" class="color-swatch" data-color="deep-navy" data-hex="#1B2A4C" aria-pressed="false" aria-label="Deep Navy"></button>
+                <button type="button" class="color-swatch" data-color="burgundy" data-hex="#7A2333" aria-pressed="false" aria-label="Burgundy"></button>
+                <button type="button" class="color-swatch" data-color="forest-green" data-hex="#1F4D3A" aria-pressed="false" aria-label="Forest Green"></button>
+                <button type="button" class="color-swatch" data-color="charcoal" data-hex="#33363D" aria-pressed="false" aria-label="Charcoal"></button>
+                <button type="button" class="color-swatch" data-color="teal" data-hex="#1F5C5C" aria-pressed="false" aria-label="Teal"></button>
+                <button type="button" class="color-swatch" data-color="bronze" data-hex="#8C5A2B" aria-pressed="false" aria-label="Bronze"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="template-tile" data-tiers="mid advanced" data-photo="true">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-photo-banded.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-photo-banded.png" alt="Photo Banded template: photo slot with banded section headings, rendered from the real one-page CV template with sample content." loading="lazy" width="460" height="399">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name">
+              <span class="photo-dot" aria-hidden="true"></span>
+              <span class="tile-name-text">Photo Banded</span>
+              <span class="tile-accent-rule" aria-hidden="true"></span>
+            </div>
+            <p class="template-tile-desc">Photo slot with banded section headings.</p>
+            <div class="color-picker" data-color-picker>
+              <span class="color-picker-label">Accent colour</span>
+              <div class="color-swatches" role="group" aria-label="Choose an accent colour for Photo Banded">
+                <button type="button" class="color-swatch color-swatch-gray" data-color="grayscale" aria-pressed="true" aria-label="Black and white, default"></button>
+                <button type="button" class="color-swatch" data-color="deep-navy" data-hex="#1B2A4C" aria-pressed="false" aria-label="Deep Navy"></button>
+                <button type="button" class="color-swatch" data-color="burgundy" data-hex="#7A2333" aria-pressed="false" aria-label="Burgundy"></button>
+                <button type="button" class="color-swatch" data-color="forest-green" data-hex="#1F4D3A" aria-pressed="false" aria-label="Forest Green"></button>
+                <button type="button" class="color-swatch" data-color="charcoal" data-hex="#33363D" aria-pressed="false" aria-label="Charcoal"></button>
+                <button type="button" class="color-swatch" data-color="teal" data-hex="#1F5C5C" aria-pressed="false" aria-label="Teal"></button>
+                <button type="button" class="color-swatch" data-color="bronze" data-hex="#8C5A2B" aria-pressed="false" aria-label="Bronze"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="template-tile" data-tiers="mid advanced" data-photo="true">
+          <picture>
+
+            <source srcset="/assets/templates/tmpl-photo-sidebar.webp" type="image/webp">
+
+            <img src="/assets/templates/tmpl-photo-sidebar.png" alt="Photo Sidebar template: photo and contact details in a side column, rendered from the real one-page CV template with sample content." loading="lazy" width="460" height="399">
+
+          </picture>
+          <div class="template-tile-body">
+            <div class="template-tile-name">
+              <span class="photo-dot" aria-hidden="true"></span>
+              <span class="tile-name-text">Photo Sidebar</span>
+              <span class="tile-accent-rule" aria-hidden="true"></span>
+            </div>
+            <p class="template-tile-desc">Photo and contact details in a side column.</p>
+            <div class="color-picker" data-color-picker>
+              <span class="color-picker-label">Accent colour</span>
+              <div class="color-swatches" role="group" aria-label="Choose an accent colour for Photo Sidebar">
+                <button type="button" class="color-swatch color-swatch-gray" data-color="grayscale" aria-pressed="true" aria-label="Black and white, default"></button>
+                <button type="button" class="color-swatch" data-color="deep-navy" data-hex="#1B2A4C" aria-pressed="false" aria-label="Deep Navy"></button>
+                <button type="button" class="color-swatch" data-color="burgundy" data-hex="#7A2333" aria-pressed="false" aria-label="Burgundy"></button>
+                <button type="button" class="color-swatch" data-color="forest-green" data-hex="#1F4D3A" aria-pressed="false" aria-label="Forest Green"></button>
+                <button type="button" class="color-swatch" data-color="charcoal" data-hex="#33363D" aria-pressed="false" aria-label="Charcoal"></button>
+                <button type="button" class="color-swatch" data-color="teal" data-hex="#1F5C5C" aria-pressed="false" aria-label="Teal"></button>
+                <button type="button" class="color-swatch" data-color="bronze" data-hex="#8C5A2B" aria-pressed="false" aria-label="Bronze"></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <p class="template-empty" id="template-empty" hidden>No templates match that filter combination.</p>
 
-      <p class="templates-note">Advanced: the bot now offers all 16 templates. WhatsApp's list-message limit only caps how many fit in one menu, so it's handled with a "Show more" second menu, not a hard cutoff. This gallery still shows the same 10 tiles as Mid; the remaining 6 are being added to the website next. Every tile above is a real PDF rendered by CareerSignal's own template code, using one consistent placeholder profile ("Nomvula Dlamini") so the designs are genuinely comparable, not a real customer's CV. Every template is black-and-white by default for reliable ATS parsing, with one optional accent-colour option from Mid tier up.</p>
+      <p class="templates-note">Advanced: the bot now offers all 16 templates. WhatsApp's list-message limit only caps how many fit in one menu, so it's handled with a "Show more" second menu, not a hard cutoff. This gallery still shows the same 10 tiles as Mid; the remaining 6 are being added to the website next. Every tile above is a real PDF rendered by CareerSignal's own template code, using one consistent placeholder profile ("Nomvula Dlamini") so the designs are genuinely comparable, not a real customer's CV. Every template is black-and-white by default for reliable ATS parsing. The accent-colour swatches below each tile are real: pick one to preview where the colour lands on your name and section dividers, exactly as it would in the actual document, never behind body text. Colour is only offered from Mid tier up, so it's hidden while the Basic filter is active.</p>
     </div>
   </section>
 

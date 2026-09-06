@@ -107,6 +107,13 @@
 
   function applyFilter() {
     var visibleCount = 0;
+    // Colour is only ever offered from Mid tier up (Basic stays
+    // grayscale-only, no step shown in the real conversation), so the
+    // per-tile swatch picker and the "Recommended on Mid/Advanced" badge
+    // hide themselves while the Basic filter is the one active, rather
+    // than implying a choice Basic buyers don't actually get.
+    var colorEligible = activeTier !== "basic";
+
     tiles.forEach(function (tile) {
       var tiers = (tile.getAttribute("data-tiers") || "").split(" ");
       var isPhoto = tile.getAttribute("data-photo") === "true";
@@ -115,6 +122,15 @@
       var show = matchesTier && matchesPhoto;
       tile.hidden = !show;
       if (show) visibleCount++;
+
+      var picker = tile.querySelector("[data-color-picker]");
+      if (picker) picker.hidden = !colorEligible;
+
+      var badge = tile.querySelector("[data-badge-tiers]");
+      if (badge) {
+        var badgeTiers = (badge.getAttribute("data-badge-tiers") || "").split(" ");
+        badge.hidden = !(activeTier !== "all" && badgeTiers.indexOf(activeTier) !== -1);
+      }
     });
     if (emptyMsg) emptyMsg.hidden = visibleCount > 0;
   }
@@ -145,6 +161,46 @@
       var tier = link.getAttribute("data-jump-tier");
       var targetBtn = document.querySelector('[data-filter-tier="' + tier + '"]');
       if (targetBtn) targetBtn.click();
+    });
+  });
+
+  applyFilter();
+})();
+
+// Template gallery: accent-colour swatch picker. Real per-tier colours
+// (constants.ts's ACCENT_PALETTE, verified against Plasing-1), applied
+// only to the tile's name text and a thin rule beneath it, matching
+// exactly where the real bot applies colour (name/section-divider rules
+// and header/contact bands, never body-text backgrounds). This previews
+// where the colour lands, it does not re-render the PDF image itself.
+(function () {
+  "use strict";
+
+  var swatches = Array.prototype.slice.call(document.querySelectorAll(".color-swatch"));
+  if (swatches.length === 0) return;
+
+  // Paint each swatch's own colour in from data-hex once, up front,
+  // rather than hard-coding it per button in the markup.
+  swatches.forEach(function (swatch) {
+    var hex = swatch.getAttribute("data-hex");
+    if (hex) swatch.style.background = hex;
+  });
+
+  swatches.forEach(function (swatch) {
+    swatch.addEventListener("click", function () {
+      var tile = swatch.closest(".template-tile");
+      if (!tile) return;
+
+      var group = swatch.closest(".color-swatches");
+      Array.prototype.slice.call(group.querySelectorAll(".color-swatch")).forEach(function (s) {
+        s.setAttribute("aria-pressed", s === swatch ? "true" : "false");
+      });
+
+      var nameText = tile.querySelector(".tile-name-text");
+      var rule = tile.querySelector(".tile-accent-rule");
+      var hex = swatch.getAttribute("data-hex");
+      if (nameText) nameText.style.color = hex || "";
+      if (rule) rule.style.background = hex || "transparent";
     });
   });
 })();

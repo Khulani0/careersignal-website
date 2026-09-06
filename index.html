@@ -266,7 +266,7 @@
         <button type="button" class="filter-btn" data-filter-tier="all" aria-pressed="true">All tiers</button>
         <button type="button" class="filter-btn" data-filter-tier="basic" aria-pressed="false">Basic <span aria-hidden="true">&middot;</span> 6</button>
         <button type="button" class="filter-btn" data-filter-tier="mid" aria-pressed="false">Mid <span aria-hidden="true">&middot;</span> 10</button>
-        <button type="button" class="filter-btn" data-filter-tier="advanced" aria-pressed="false">Advanced <span aria-hidden="true">&middot;</span> 10 now, 16 coming</button>
+        <button type="button" class="filter-btn" data-filter-tier="advanced" aria-pressed="false">Advanced <span aria-hidden="true">&middot;</span> 10 shown, 16 in the bot</button>
         <span class="filter-divider" aria-hidden="true"></span>
         <button type="button" class="filter-btn filter-btn-photo" data-filter-photo aria-pressed="false">Photo option only</button>
       </div>
@@ -406,7 +406,7 @@
 
       <p class="template-empty" id="template-empty" hidden>No templates match that filter combination.</p>
 
-      <p class="templates-note">Advanced: 10 templates available now (same set as Mid. A WhatsApp platform limit caps how many we can list in one menu, and more are on the way). Every tile above is a real PDF rendered by CareerSignal's own template code, using one consistent placeholder profile ("Nomvula Dlamini") so the designs are genuinely comparable, not a real customer's CV. Every template is black-and-white by default for reliable ATS parsing, with one optional accent-colour option from Mid tier up.</p>
+      <p class="templates-note">Advanced: the bot now offers all 16 templates. WhatsApp's list-message limit only caps how many fit in one menu, so it's handled with a "Show more" second menu, not a hard cutoff. This gallery still shows the same 10 tiles as Mid; the remaining 6 are being added to the website next. Every tile above is a real PDF rendered by CareerSignal's own template code, using one consistent placeholder profile ("Nomvula Dlamini") so the designs are genuinely comparable, not a real customer's CV. Every template is black-and-white by default for reliable ATS parsing, with one optional accent-colour option from Mid tier up.</p>
     </div>
   </section>
 
@@ -482,13 +482,13 @@
   <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
     <div class="wrap">
       <h2 id="pricing-heading">Honest pricing</h2>
-      <p class="section-lead">Three tiers. What you see is what you pay. No surprise add-ons at checkout.</p>
+      <p class="section-lead">One flat price per tier. No add-ons, no extra charges for revisions, no separate fee for a human review.</p>
 
       <div class="price-cards">
         <div class="price-card">
           <div class="price-card-head">
             <span class="price-tier">Basic</span>
-            <span class="price-amount">R30</span>
+            <span class="price-amount">R49</span>
           </div>
           <div class="price-card-body">
             <p class="price-desc">For a first, solid application.</p>
@@ -496,9 +496,14 @@
               <li>One-page CV</li>
               <li><a href="#templates" class="tier-jump-link" data-jump-tier="basic">Choice of 6 templates</a></li>
               <li>
-                One AI revision round
+                1 AI fix
                 <button type="button" class="feature-detail-toggle" data-detail-toggle>What's this?</button>
                 <span class="feature-detail" hidden>You tell CareerSignal what to change, in plain language. It edits just that section, not the whole CV.</span>
+              </li>
+              <li>
+                1 Escalation to a real person
+                <button type="button" class="feature-detail-toggle" data-detail-toggle>What's this?</button>
+                <span class="feature-detail" hidden>A real person on our team reviews or rewrites your CV directly, the same business day. Included, never an extra charge.</span>
               </li>
             </ul>
           </div>
@@ -506,17 +511,23 @@
         <div class="price-card">
           <div class="price-card-head">
             <span class="price-tier">Mid</span>
-            <span class="price-amount">R50</span>
+            <span class="price-amount">R99</span>
           </div>
           <div class="price-card-body">
             <p class="price-desc">More room for your full work history.</p>
             <ul class="price-features">
               <li>Two-page CV</li>
               <li><a href="#templates" class="tier-jump-link" data-jump-tier="mid">Choice of 10 templates</a></li>
+              <li>Cover letter included</li>
               <li>
-                Two AI revision rounds
+                2 AI fixes
                 <button type="button" class="feature-detail-toggle" data-detail-toggle>What's this?</button>
-                <span class="feature-detail" hidden>Same as Basic's revision round, twice over. Ask for one change, then ask again if you still want something different. No extra charge either time.</span>
+                <span class="feature-detail" hidden>Same as Basic's AI fix, twice over. Ask for one change, then ask again if you still want something different. No extra charge either time.</span>
+              </li>
+              <li>
+                1 Escalation to a real person
+                <button type="button" class="feature-detail-toggle" data-detail-toggle>What's this?</button>
+                <span class="feature-detail" hidden>A real person on our team reviews or rewrites your CV directly, the same business day. Included, never an extra charge.</span>
               </li>
             </ul>
           </div>
@@ -524,25 +535,53 @@
         <div class="price-card">
           <div class="price-card-head">
             <span class="price-tier">Advanced</span>
-            <span class="price-amount">R90</span>
+            <span class="price-amount">R199</span>
           </div>
           <div class="price-card-body">
             <p class="price-desc">Everything CareerSignal offers, tailored to the job.</p>
             <ul class="price-features">
               <li>Up to three-page CV</li>
-              <li><a href="#templates" class="tier-jump-link" data-jump-tier="advanced">Choice of 10 templates (same set as Mid)</a></li>
+              <li><a href="#templates" class="tier-jump-link" data-jump-tier="advanced">Choice of all 16 templates (10 shown in the gallery so far)</a></li>
               <li>Job-tailored keyword pass</li>
-              <li>Cover letter included</li>
+              <li>Cover letter included, automatically</li>
               <li>
-                Unlimited AI revisions
+                3 AI fixes
                 <button type="button" class="feature-detail-toggle" data-detail-toggle>What's this?</button>
-                <span class="feature-detail" hidden>As many rounds of "change this" as you need, at no extra charge, plus one human review pass included automatically. A real person checks your CV and makes a revision pass of their own.</span>
+                <span class="feature-detail" hidden>Same AI fix as the other tiers, three rounds included. Ask for changes as many times as you have fixes left, at no extra charge.</span>
+              </li>
+              <li>
+                2 Escalations to a real person
+                <button type="button" class="feature-detail-toggle" data-detail-toggle>What's this?</button>
+                <span class="feature-detail" hidden>A real person on our team reviews or rewrites your CV directly, the same business day. Included, never an extra charge.</span>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <p class="price-note">You always see a preview before you pay. If it's not right, you don't pay.</p>
+      <p class="price-note">You always see a preview before you pay. If it's not right, you don't pay. Once a document has used its included AI fixes and Escalations, that document is complete. Start a new document to keep building.</p>
+    </div>
+  </section>
+
+  <!-- ESCALATION -->
+  <section class="escalation" id="escalation" aria-labelledby="escalation-heading">
+    <div class="wrap">
+      <h2 id="escalation-heading">When you want a real person, not just AI</h2>
+      <p class="section-lead">Every tier includes a real human Escalation, already paid for. Not an upsell, not a separate charge.</p>
+      <div class="escalation-cards">
+        <div class="escalation-card">
+          <span class="escalation-tier">Basic</span>
+          <p>You get 1 fix from the bot and 1 Escalation to a real person on our team, both included in your R49. Just say what needs changing.</p>
+        </div>
+        <div class="escalation-card">
+          <span class="escalation-tier">Mid</span>
+          <p>You get 2 fixes from the bot and 1 Escalation to a real person, all included in your R99.</p>
+        </div>
+        <div class="escalation-card">
+          <span class="escalation-tier">Advanced</span>
+          <p>You get 3 fixes from the bot and 2 Escalations to a real person, all included in your R199.</p>
+        </div>
+      </div>
+      <p class="escalation-note">Ask for an Escalation any time during the WhatsApp conversation, just say what you need. Escalation requests are handled the same business day. Once a document's fixes and Escalations are used up, that document is complete; starting a new document means a new tier purchase.</p>
     </div>
   </section>
 

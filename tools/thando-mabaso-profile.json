@@ -1,0 +1,70 @@
+{
+  "_provenance": "Canonical placeholder profile for template gallery renders. Content given verbatim by the site owner; do not rewrite. Shape matches Plasing-1's ExtractedProfileData (profile) and GeneratedCvContent (content) types exactly, so it can be read directly by a throwaway render script that calls renderCvPdf.",
+  "profile": {
+    "full_name": "Thando Mabaso",
+    "phone": "073 456 7890",
+    "email": null,
+    "location": "Johannesburg",
+    "summary": null,
+    "declared_career": "retail",
+    "work_authorization_status": "South African citizen",
+    "work_experience": [],
+    "education": [
+      {
+        "institution": "Sandton Secondary School",
+        "qualification": "National Senior Certificate",
+        "start_date": null,
+        "end_date": "2020",
+        "status": "completed"
+      }
+    ],
+    "skills": [
+      "POS systems (till and self-checkout)",
+      "stock control and merchandising",
+      "customer service and query resolution",
+      "team training and onboarding",
+      "cash handling and reconciliation"
+    ],
+    "certifications": [],
+    "languages": []
+  },
+  "content": {
+    "summary": "Retail team member with over 4 years of experience in fast-paced store environments, known for keeping shelves stocked, queues moving, and customers coming back. Comfortable running a till, training new starters, and stepping in wherever the floor needs help.",
+    "workExperience": [
+      {
+        "employer": "Pick n Pay, Sandton City",
+        "title": "Senior Sales Assistant",
+        "start_date": "Mar 2023",
+        "end_date": null,
+        "is_current": true,
+        "duration_note": null,
+        "bullets": [
+          "Processed an average of 180 transactions per shift across till and self-checkout support, keeping average wait time under 3 minutes during peak hours",
+          "Trained 6 new starters on till procedures and store layout over the past year",
+          "Reduced stock discrepancies in the snacks aisle by 22% after introducing a weekly recount routine",
+          "Handled customer queries and returns, keeping the service desk queue moving during Saturday peak trade"
+        ]
+      },
+      {
+        "employer": "Mr Price, Eastgate Mall",
+        "title": "Sales Assistant",
+        "start_date": "Jan 2021",
+        "end_date": "Feb 2023",
+        "is_current": false,
+        "duration_note": null,
+        "bullets": [
+          "Restocked and merchandised up to 40 rails per shift ahead of weekend trade",
+          "Assisted with monthly stocktake across a 3-person team, closing counts within the allotted 2-hour window",
+          "Recognised as Employee of the Month twice for consistent attendance and customer feedback scores"
+        ]
+      }
+    ],
+    "skills": [
+      "POS systems (till and self-checkout)",
+      "stock control and merchandising",
+      "customer service and query resolution",
+      "team training and onboarding",
+      "cash handling and reconciliation"
+    ]
+  }
+}

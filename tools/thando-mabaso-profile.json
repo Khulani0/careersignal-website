@@ -25,7 +25,15 @@
       "team training and onboarding",
       "cash handling and reconciliation"
     ],
-    "certifications": [],
+    "certifications": ["First Aid Level 1 (St John Ambulance)", "SETA-accredited Customer Service Certificate"],
+    "drivers_licence": "Code B (Code 08)",
+    "references": {
+      "mode": "detailed",
+      "entries": [
+        { "name": "Lindiwe Nkosi", "phone": "082 345 6789" },
+        { "name": "Given Moyo", "phone": "071 234 5678" }
+      ]
+    },
     "languages": []
   },
   "content": {

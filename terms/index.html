@@ -46,12 +46,13 @@
   <div class="wrap header-inner">
     <a href="/" class="logo">CareerSignal</a>
     <!-- WHATSAPP LINK PLACEHOLDER: replace wa.me/PLACEHOLDER with the real WhatsApp number link once registration is complete -->
-    <a class="btn btn-whatsapp btn-small" href="https://wa.me/PLACEHOLDER" target="_blank" rel="noopener">
+    <a class="btn btn-whatsapp btn-small" data-wa data-wa-href="https://wa.me/PLACEHOLDER" hidden>
       <span class="wa-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.6.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5s-.6-1.5-.9-2c-.2-.5-.4-.4-.6-.5H8.3c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.2-.2-.2-.5-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
       </span>
       Start on WhatsApp
     </a>
+    <p class="wa-fallback" data-wa-fallback>CareerSignal is in an invite-only trial. Public launch coming soon.</p>
   </div>
 </header>
 
@@ -67,7 +68,7 @@
   <section>
     <div class="wrap page-content">
       <h2>1. What CareerSignal is</h2>
-      <p>CareerSignal is a document generation service. You send us your work history, by voice note or text, over WhatsApp. We generate a CV and, on Mid and Advanced, a cover letter. You review a preview before you pay. CareerSignal is not a job board, does not place you in a job, and never charges for access to job listings or referrals.</p>
+      <p>CareerSignal is a document generation service. You send us your work history, as text, or by uploading an existing CV, over WhatsApp. We generate a CV and, on Mid and Advanced, a cover letter. You review a preview before you pay. CareerSignal is not a job board, does not place you in a job, and never charges for access to job listings or referrals.</p>
 
       <h2>2. Pricing</h2>
       <p>CareerSignal charges one flat price per tier. There are no add-ons, no extra charges for revisions, and no separate fee for a human review. Everything you get is included in the price below.</p>
@@ -79,24 +80,24 @@
           <tbody>
             <tr><td>Basic</td><td>R49</td><td>One-page CV, choice of 6 templates, 1 AI fix, 1 Escalation to a real person</td></tr>
             <tr><td>Mid</td><td>R99</td><td>Up to two-page CV, choice of 10 templates, cover letter included, 2 AI fixes, 1 Escalation to a real person</td></tr>
-            <tr><td>Advanced</td><td>R199</td><td>Up to three-page CV, choice of 16 templates (rolling out, see template count note below), cover letter, job-tailored keyword pass, 3 AI fixes, 2 Escalations to a real person</td></tr>
+            <tr><td>Advanced</td><td>R199</td><td>Up to three-page CV, choice of 16 templates, cover letter, job-tailored keyword pass, 3 AI fixes, 2 Escalations to a real person</td></tr>
           </tbody>
         </table>
       </div>
-      <p><strong>An "AI fix" is a revision round done by the bot from your feedback. An "Escalation" is a review or rewrite by a real person on our team, the same business day.</strong> Each tier includes a fixed number of both, at no extra cost. Once a document has used its included fixes and Escalations, that document is complete, no further revisions are available on it at any price. To keep building after that, start a new document.</p>
+      <p><strong>An "AI fix" is a revision round done by the bot from your feedback. An "Escalation" is a review or rewrite by a real person on our team.</strong> Each tier includes a fixed number of both, at no extra cost. Once a document has used its included fixes and Escalations, that document is complete, no further revisions are available on it at any price. To keep building after that, start a new document.</p>
 
       <h2>3. Template availability</h2>
-      <p>Basic offers 6 templates. Mid offers 10. Advanced offers all 16 in the WhatsApp conversation; this website's own template gallery is still rolling out the last 6, so you may see fewer shown here than the bot actually offers. We will not charge Advanced pricing for fewer templates than promised without saying so here first.</p>
+      <p>Basic offers 6 templates. Mid offers 10. Advanced offers all 16. All 16 designs are shown in the gallery on our home page.</p>
 
       <h2>4. Preview before payment</h2>
       <p>You see your CV before you pay for it. If it's not right, you are not charged.</p>
 
       <h2>5. Escalation, human review</h2>
-      <p>At every tier, you can ask for your CV to be reviewed by a real person on our team rather than only the AI, included in your tier price at no extra charge: 1 Escalation on Basic, 1 on Mid, 2 on Advanced. Escalation requests are handled by our team directly, not by an automated system, and are turned around the same business day.</p>
+      <p>At every tier, you can ask for your CV to be reviewed by a real person on our team rather than only the AI, included in your tier price at no extra charge: 1 Escalation on Basic, 1 on Mid, 2 on Advanced. Escalation requests are handled by our team directly, not by an automated system. Need something fixed? Message us on 063 263 4922 with your CV and what you want changed.</p>
 
       <h2>6. What we never do</h2>
       <ul>
-        <li>We never charge you to see job listings, sponsor information, or vacancy referrals. That information, where it exists, is free, permanently.</li>
+        <li>CareerSignal is not a job board. We do not sell job listings, referrals or placements.</li>
         <li>We never invent details on your CV. If something is unclear, we ask you rather than guessing.</li>
         <li>We never promise a CV will get you a job, an interview, or a specific outcome. We produce a well-formatted, honest document.</li>
         <li>We never share your login credentials or submit job applications on your behalf without your direct review and approval.</li>
@@ -140,7 +141,7 @@
           <li><a href="/privacy">Privacy</a></li>
           <li><a href="/terms">Terms</a></li>
           <!-- WHATSAPP LINK PLACEHOLDER: replace wa.me/PLACEHOLDER with the real WhatsApp number link once registration is complete -->
-          <li><a href="https://wa.me/PLACEHOLDER" target="_blank" rel="noopener">Contact us on WhatsApp</a></li>
+          <li><a data-wa data-wa-href="https://wa.me/PLACEHOLDER" hidden>Contact us on WhatsApp</a><span class="wa-fallback" data-wa-fallback>CareerSignal is in an invite-only trial. Public launch coming soon.</span></li>
         </ul>
       </div>
     </div>
@@ -150,6 +151,8 @@
     </div>
   </div>
 </footer>
+
+<script src="/script.js"></script>
 
 </body>
 </html>

@@ -47,12 +47,13 @@
   <div class="wrap header-inner">
     <a href="/" class="logo">CareerSignal</a>
     <!-- WHATSAPP LINK PLACEHOLDER: replace wa.me/PLACEHOLDER with the real WhatsApp number link once registration is complete -->
-    <a class="btn btn-whatsapp btn-small" href="https://wa.me/PLACEHOLDER" target="_blank" rel="noopener">
+    <a class="btn btn-whatsapp btn-small" data-wa data-wa-href="https://wa.me/PLACEHOLDER" hidden>
       <span class="wa-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.6.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5s-.6-1.5-.9-2c-.2-.5-.4-.4-.6-.5H8.3c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.2-.2-.2-.5-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
       </span>
       Start on WhatsApp
     </a>
+    <p class="wa-fallback" data-wa-fallback>CareerSignal is in an invite-only trial. Public launch coming soon.</p>
   </div>
 </header>
 
@@ -68,7 +69,7 @@
   <section>
     <div class="wrap page-content">
       <h2>What's collected</h2>
-      <p>The career information you give CareerSignal over WhatsApp: typed text, voice notes, and any CV or document you upload. Your contact details. Records of what you paid for.</p>
+      <p>The career information you give CareerSignal over WhatsApp: typed text, and any CV or document you upload. Your contact details. Records of what you paid for.</p>
 
       <h2>Why</h2>
       <p>To generate the CV or cover letter you asked for. Nothing else. CareerSignal doesn't sell your information or use it to build a profile of you for any other purpose.</p>
@@ -106,7 +107,7 @@
           <li><a href="/privacy">Privacy</a></li>
           <li><a href="/terms">Terms</a></li>
           <!-- WHATSAPP LINK PLACEHOLDER: replace wa.me/PLACEHOLDER with the real WhatsApp number link once registration is complete -->
-          <li><a href="https://wa.me/PLACEHOLDER" target="_blank" rel="noopener">Contact us on WhatsApp</a></li>
+          <li><a data-wa data-wa-href="https://wa.me/PLACEHOLDER" hidden>Contact us on WhatsApp</a><span class="wa-fallback" data-wa-fallback>CareerSignal is in an invite-only trial. Public launch coming soon.</span></li>
         </ul>
       </div>
     </div>
@@ -116,6 +117,8 @@
     </div>
   </div>
 </footer>
+
+<script src="/script.js"></script>
 
 </body>
 </html>

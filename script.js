@@ -1,3 +1,31 @@
+// WhatsApp switch. Set LAUNCHED to true on public launch. While false, every
+// [data-wa] element is replaced by a plain, non-clickable notice and the
+// original link is kept in data-wa-href so it can be restored.
+var LAUNCHED = false;
+
+(function () {
+  var NOTICE = "Invite-only trial. Public launch coming soon.";
+  var links = Array.prototype.slice.call(document.querySelectorAll("[data-wa]"));
+  var fallbacks = Array.prototype.slice.call(document.querySelectorAll("[data-wa-fallback]"));
+  fallbacks.forEach(function (el) { el.hidden = true; });
+  links.forEach(function (a) {
+    var href = a.getAttribute("data-wa-href");
+    if (LAUNCHED) {
+      a.setAttribute("href", href);
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+      a.hidden = false;
+    } else {
+      var block = document.createElement("span");
+      block.className = "wa-closed";
+      block.setAttribute("data-wa-closed", "");
+      block.setAttribute("data-wa-href", href);
+      block.textContent = NOTICE;
+      a.parentNode.replaceChild(block, a);
+    }
+  });
+})();
+
 // How it works: scroll-linked chat demo. Scroll position through a tall
 // track drives which of the 4 real stages is showing, both in the text
 // panel and in the phone. Real conversation content, unchanged from the

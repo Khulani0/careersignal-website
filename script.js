@@ -300,7 +300,7 @@ var LAUNCHED = false;
     // Section 2, rule 2: the exact banned-phrase list
     var buzzHit = buzzwords.filter(function (b) { return lower.indexOf(b) !== -1; });
     if (buzzHit.length) {
-      rows.push({ mk: "fail", text: 'Uses an AI-tell phrase: "' + buzzHit[0] + '." Only keep it if it is genuinely your own word for the job.' });
+      rows.push({ mk: "fail", text: 'Uses a stock phrase: "' + buzzHit[0] + '." Only keep it if it is genuinely your own word for the job.' });
       failCount++;
     } else {
       rows.push({ mk: "pass", text: "No banned buzzwords." });
